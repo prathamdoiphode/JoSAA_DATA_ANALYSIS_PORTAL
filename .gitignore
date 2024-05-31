@@ -4,7 +4,8 @@ __pycache__/
 *$py.class
 
 # whose folder and file is not sendig to github ..........
-web_scraping/
+web_scraping/josaa_table_data_(2016_2023).csv
+web_scraping/chromedriver
 db.sqlite3
 
 
