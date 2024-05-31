@@ -3,6 +3,11 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# whose folder and file is not sendig to github ..........
+web_scraping/
+db.sqlite3
+
+
 # C extensions
 *.so
 
