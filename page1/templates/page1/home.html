@@ -1,12 +1,5 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JoSAA</title>
-    <link rel="stylesheet" href="{% static 'page1/main.css' %}" />
-  </head>
+
+{% include "page1/header.html" %}
   <body style="background-color: wheat">
     <header>
       <h1>
@@ -18,7 +11,6 @@
         <img src="JOSAA.webp" alt="RandomImage" height="550" width="510" />
       </div>
     </header>
-
     <hr />
     <h4>
       For more information, visit
@@ -31,7 +23,7 @@
     
         <div class="rectangle" style="width : 100%;"> Analyse more popular branches 
             <p class="info"> which branches are getting more popular </p>
-            <div class="b_h"> <a href="Branch.html">Get Started --> </a> </div>
+            <div class="b_h"> <a href="branch">Get Started --> </a> </div>
             <hr/>
         </div>
     </div>
@@ -41,12 +33,12 @@
         <div class="rectangle"> Analyse trends based on years
             
             <p class="info">What is the flow of students among the IITs over the years</p>
-                <div class="b_h"> <a href="YearWise.html">Get Started --></a> </div>
+                <div class="b_h"> <a href="yearwise">Get Started --></a> </div>
                 <hr/>
         </div>
         <div class="rectangle"> Analyse trends based on Round
             <p class="info">Analyze trends based on round-wise cutoffs for years</p>
-                <div class="b_h"> <a href="Roundwise.html">Get Started --></a> </div>
+                <div class="b_h"> <a href="roundwise">Get Started --></a> </div>
                 <hr/>
         </div>
     
@@ -79,5 +71,7 @@
         </li>
       </ol>
     </section>
-  </body>
-</html>
+{% include "page1/footer.html" %}
+
+
+

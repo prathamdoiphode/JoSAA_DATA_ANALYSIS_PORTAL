@@ -3,6 +3,7 @@ from django.shortcuts import render
 
 def home(request):
     return render(request,'page1/home.html')
+    # return render(request,'home.html')  ## ... recommend to video
 
 def about(request):
     return render(request,'page1/about.html',{'title':'about'})

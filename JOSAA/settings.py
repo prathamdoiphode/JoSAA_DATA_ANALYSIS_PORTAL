@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # 'page1'  ## ... recommend to video
     "page1.apps.Page1Config",
     "django.contrib.admin",
     "django.contrib.auth",
@@ -56,6 +57,7 @@ TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [],
+        # "DIRS": [BASE_DIR,"page1/templates/page1"], ## ...  recommend to video
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -122,3 +124,8 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+## ... recommend to video
+# STATICFILES_DIRS = [
+#     BASE_DIR, "page1/static",
+# ]
