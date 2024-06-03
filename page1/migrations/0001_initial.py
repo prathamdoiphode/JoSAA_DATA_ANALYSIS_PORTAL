@@ -11,7 +11,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name="jossaTable",
+            name="josaaTable",
             fields=[
                 ("id", models.IntegerField(primary_key=True, serialize=False)),
                 ("Institute", models.CharField(max_length=100)),

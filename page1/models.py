@@ -4,7 +4,7 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 '''
 
-class jossaTable(models.Model):
+class josaaTable(models.Model):
     id = models.IntegerField(primary_key=True)
     Institute = models.CharField(max_length=100)
     Seat_Type = models.CharField(max_length=20)
