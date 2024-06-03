@@ -1,43 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JOSAA</title>
-    <link rel="stylesheet" href="static/css/home.css">
-</head>
+{% load static %}
+{% include "header.html" %}   
+
 <body>
-    <nav class="navbar">
-        <ul class="nav-menu">
-            <li class="nav-item"><a href="home.html">Home</a></li>
-            <li class="nav-item"><a href="iit.html">IIT</a></li>
-            <li class="nav-item"><a href="project.html">Project</a></li>
-            <li class="nav-item"><a href="contact.html">Contact</a></li>
-            <li class="nav-item"><a href="more.html">More</a></li>
-            <li class="nav-item"><a href="about.html">About</a></li>
-        </ul>
-    </nav>
+    <div id="home-body">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
     <div class="image-container">
-        <img src="static/img/josaa.jpg" alt="Left Image" class="left-image">
-        <img src="static/img/centre.png" alt="Center Image" class="center-image">
-        <img src="static/img/club.jpg" alt="Right Image" class="right-image">
+        <img src="{% static 'img/josaa.jpg' %}" alt="Left Image" class="left-image">
+        <div class="container">
+            <h1>JoSAa  DaTA  AnaLySiS  PoRTaL </h1>
+        </div>
+        <img src="{% static 'img/club.jpg' %}" alt="Right Image" class="right-image">
     </div>
     <div class="container">
         <div class="topic">
             <a href="innerpage">
-                <img src="static/img/josaa.jpg" alt="Topic 1 Image" class="circle-image">
+                <img src="{% static 'img/josaa.jpg' %}" alt="Topic 1 Image" class="circle-image">
                 <h2>Popular Branches</h2>
             </a>
         </div>
         <div class="topic">
             <a href="page2.html">
-                <img src="static/img/jee.jpg" alt="Topic 2 Image" class="circle-image">
+                <img src="{% static 'img/jee.jpg' %}" alt="Topic 2 Image" class="circle-image">
                 <h2>Closing Rank</h2>
             </a>
         </div>
         <div class="topic">
             <a href="page3.html">
-                <img src="static/img/club.jpg" alt="Topic 3 Image" class="circle-image">
+                <img src="{% static 'img/club.jpg' %}" alt="Topic 3 Image" class="circle-image">
                 <h2>Opening Rank</h2>
             </a>
         </div>
@@ -45,37 +34,25 @@
     <div class="container">
         <div class="topic">
             <a href="page4.html">
-                <img src="static/img/th.jpeg" alt="Topic 4 Image" class="circle-image">
+                <img src="{% static 'img/th.jpeg' %}" alt="Topic 4 Image" class="circle-image">
                 <h2>Campus</h2>
             </a>
         </div>
         <div class="topic">
             <a href="page5.html">
-                <img src="static/img/ab.jpeg" alt="Topic 5 Image" class="circle-image">
+                <img src="{% static 'img/ab.jpeg' %}" alt="Topic 5 Image" class="circle-image">
                 <h2>Placement</h2>
             </a>
         </div>
         <div class="topic">
             <a href="page6.html">
-                <img src="static/img/iitg.jpg" alt="Topic 6 Image" class="circle-image">
+                <img src="{% static 'img/iitg.jpg' %}" alt="Topic 6 Image" class="circle-image">
                 <h2>IIT & NIT</h2>
             </a>
         </div>
     </div>
-    <div class="social-container">
-        <div class="social-buttons">
-            <a href="page1.html" class="social-button facebook"></a>
-            <a href="page2.html" class="social-button facebook"></a>
-            <a href="page3.html" class="social-button facebook"></a>
-            <a href="page4.html" class="social-button facebook"></a>
-        </div>
-        <div class="nav-items">
-            <a href="page1.html" class="nav-item">Topic 1</a>
-            <a href="page2.html" class="nav-item">Topic 2</a>
-            <a href="page3.html" class="nav-item">Topic 3</a>
-            <a href="page4.html" class="nav-item">Topic 4</a>
-            <a href="page5.html" class="nav-item">Topic 5</a>
-        </div>
-    </div>
+  </div>
 </body>
-</html>
+
+{% include "footer.html" %}
+

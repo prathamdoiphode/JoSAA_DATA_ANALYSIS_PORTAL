@@ -1,18 +1,10 @@
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inner Page</title>
-    <!-- <img src="{% static 'img/centre.png' %}" alt="Center Image" class="center-image"> -->
-    <link rel="stylesheet" href="{% static 'css/innerpage.css' %}">
-</head>
+{% include "header.html" %}
+
 <body>
-     <h2> <a href="home.com"> &#x1F3E0; Home</a></h2> 
-     <hr>
+    <link rel="stylesheet" href="{% static 'css/innerpage.css' %}">
      <div id="outer"><h4>Opening and Closing Ranks</h4>
-      <form action="/action" > 
+      <form action="/action" >
 
         <div class="inner">
             <label for="Round No" class="lhs">Round No: </label>
@@ -78,10 +70,11 @@
         
             </select>
     </div>
-<div class="inner">
+    <div class="inner">
         <button id="button">Submit</button>
     </div>
-</form>
-    </div>
+   </form>
+  </div>
 </body>
-</html>
+
+{% include "footer.html" %}
