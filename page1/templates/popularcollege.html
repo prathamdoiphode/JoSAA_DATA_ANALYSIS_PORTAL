@@ -1,0 +1,336 @@
+{% load static %}
+{% include "header.html" %}
+<script>
+function showProgramnameDropdown(InsTyperopdown) {
+    const instype = InsTyperopdown.value;
+    var ProgrammeNameDropdown = document.getElementById("ProgrammeName");
+    var disp = document.getElementById("ProgrammeNameDropdown");
+    if (InsTyperopdown.value !== "") {
+        disp.style.display = "inline-block";
+    } else {
+        disp.style.display = "none";
+    }
+    ProgrammeNameDropdown.innerHTML = "";
+    var option = document.createElement("option");
+    option.value = "";
+    option.text = "Select Programme Name";
+    option.style.fontSize = '25px';
+    ProgrammeName.appendChild(option);
+    
+      const xhr = new XMLHttpRequest();
+      const url = `/get-InstTypeWise-ProgrammeName/?instype=${instype}`;
+      xhr.open('GET', url, true);
+      xhr.onreadystatechange = function() {
+          if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+              const responseData = JSON.parse(xhr.responseText);
+              
+              for (var i = 0; i < responseData.length; i++) {
+                var option = document.createElement("option");
+                option.value = responseData[i]['Programme'];
+                option.text = responseData[i]['Programme'];
+                option.style.fontSize = '10px';
+                ProgrammeNameDropdown.appendChild(option);
+              }
+              
+              
+          }
+      };
+      xhr.send();
+}
+function showCourseDropdown(Programmedropdown) {
+    const programme = Programmedropdown.value;
+    const Instype = document.getElementById('InstituteType');
+    const instype = Instype.value;
+    var CourseDropdown = document.getElementById("Course");
+    var disp = document.getElementById("CourseDropdown");
+    if (Programmedropdown.value !== "") {
+        disp.style.display = "inline-block";
+    } else {
+        disp.style.display = "none";
+    }
+    CourseDropdown.innerHTML = "";
+    var option = document.createElement("option");
+    option.value = "";
+    option.text = "Select Course";
+    option.style.fontSize = '25px';
+    Course.appendChild(option);
+    
+      const xhr = new XMLHttpRequest();
+      const url = `/get-only-Programmewise-Course/?programme=${programme}&instype=${instype}`;
+      xhr.open('GET', url, true);
+      xhr.onreadystatechange = function() {
+          if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+              const responseData = JSON.parse(xhr.responseText);
+              
+              for (var i = 0; i < responseData.length; i++) {
+                var option = document.createElement("option");
+                option.value = responseData[i]['Course'];
+                option.text = responseData[i]['Course'];
+                option.style.fontSize = '10px';
+                CourseDropdown.appendChild(option);
+              }
+              
+              
+          }
+      };
+      xhr.send();
+}
+function showCategoryDropdown(CourseDropdown) {
+    const course = CourseDropdown.value;
+    const Instype = document.getElementById('InstituteType');
+    const Programme = document.getElementById('ProgrammeName');
+    const instype = Instype.value;
+    const programme = Programme.value;
+    var CategoryDropdown = document.getElementById("Category");
+    var disp = document.getElementById("CategoryDropdown");
+    if (CourseDropdown.value !== "") {
+        disp.style.display = "inline-block";
+    } else {
+        disp.style.display = "none";
+    }
+    CategoryDropdown.innerHTML = "";
+    var option = document.createElement("option");
+    option.value = "";
+    option.text = "Select Category";
+    option.style.fontSize = '25px';
+    Category.appendChild(option);
+    
+      const xhr = new XMLHttpRequest();
+      const url = `/get-Instype-Coursewise-Category/?course=${course}&programme=${programme}&instype=${instype}`;
+      xhr.open('GET', url, true);
+      xhr.onreadystatechange = function() {
+          if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+              const responseData = JSON.parse(xhr.responseText);
+              
+              for (var i = 0; i < responseData.length; i++) {
+                var option = document.createElement("option");
+                option.value = responseData[i]['Category'];
+                option.text = responseData[i]['Category'];
+                option.style.fontSize = '10px';
+                CategoryDropdown.appendChild(option);
+              }
+              
+              
+          }
+      };
+      xhr.send();
+}
+function showGenderDropdown(CategoryDropdown) {
+    const category = CategoryDropdown.value;
+    const Instype = document.getElementById('InstituteType');
+    const Programme = document.getElementById('ProgrammeName');
+    const Course = document.getElementById('Course');
+    const instype = Instype.value;
+    const programme = Programme.value;
+    const course = Course.value;
+    var GenderDropdown = document.getElementById("Gender");
+    var disp = document.getElementById("GenderDropdown");
+    if (CategoryDropdown.value !== "") {
+        disp.style.display = "inline-block";
+    } else {
+        disp.style.display = "none";
+    }
+    GenderDropdown.innerHTML = "";
+    var option = document.createElement("option");
+    option.value = "";
+    option.text = "Select Gender";
+    option.style.fontSize = '25px';
+    Gender.appendChild(option);
+    
+      const xhr = new XMLHttpRequest();
+      const url = `/get-InsType-Categorywise-Gender/?category=${category}&course=${course}&programme=${programme}&instype=${instype}`;
+      xhr.open('GET', url, true);
+      xhr.onreadystatechange = function() {
+          if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+              const responseData = JSON.parse(xhr.responseText);
+              
+              for (var i = 0; i < responseData.length; i++) {
+                var option = document.createElement("option");
+                option.value = responseData[i]['Gender'];
+                option.text = responseData[i]['Gender'];
+                option.style.fontSize = '10px';
+                GenderDropdown.appendChild(option);
+              }
+              
+              
+          }
+      };
+      xhr.send();
+}
+function showYearDropdown(GenderDropdown) {
+    var YearDropdown = document.getElementById("Year");
+    var disp = document.getElementById("YearDropdown");
+    if (GenderDropdown.value !== "") {
+        disp.style.display = "inline-block";
+    } else {
+        disp.style.display = "none";
+    }
+    YearDropdown.innerHTML = "";
+    var option = document.createElement("option");
+    option.value = "";
+    option.text = "Select Year";
+    option.style.fontSize = '25px';
+    Year.appendChild(option);
+    
+      const xhr = new XMLHttpRequest();
+      const url = `/get-YearDropdown/`;
+      xhr.open('GET', url, true);
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+            const responseData = JSON.parse(xhr.responseText);
+            
+            for (var i = 0; i < responseData.length; i++) {
+                var option = document.createElement("option");
+                option.value = responseData[i]['Year'];
+                option.text = responseData[i]['Year'];
+                option.style.fontSize = '10px';
+                YearDropdown.appendChild(option);
+            }  
+        }
+      };
+      xhr.send();
+}
+</script>
+<body>
+    <link rel="stylesheet" href="{% static 'css/innerpage.css' %}">
+    <div id="popularcollege"><h4>Predict yearwise opening and closing rank</h4>
+            <div class="inner">
+                <label for="InstituteType" class="lhs">Institute Type: </label>
+                <select name="InstituteType" id="InstituteType"  onchange="showProgramnameDropdown(this)">
+                    <option id="main">Select an Option</option>
+                    <option value="IIT">IIT</option>
+                    <option value="NIT">NIT</option>
+                    <option value="IIIT">IIIT</option>
+                    <option value="Government">Government Institute</option>
+                </select>
+            </div>
+            <div class="inner" id="ProgrammeNameDropdown">
+                <label for="ProgrammeName" class="lhs">Programme: </label>
+                <select name="ProgrammeName" id="ProgrammeName" onchange="showCourseDropdown(this)">
+                    <option>Select an Option</option>
+                </select>
+            </div>
+            <div class="inner" id="CourseDropdown">
+                <label for="Course" class="lhs">Course: </label>
+                <select name="Course" id="Course" onchange="showCategoryDropdown(this)">
+                    <option>Select an Option</option>
+                </select>
+            </div>
+            <div class="inner" id="CategoryDropdown">
+                <label for="Category" class="lhs">Category: </label>
+                <select name="Category" id="Category" onchange="showGenderDropdown(this)">
+                    <option>Select an Option</option>
+                </select>
+            </div>
+            <div class="inner" id="GenderDropdown">
+                <label for="Gender" class="lhs">Gender: </label>
+                <select name="Gender" id="Gender" onchange="showYearDropdown(this)">
+                    <option>Select an Option</option>
+                </select>
+            </div>
+            <div class="inner" id="YearDropdown" >
+                <label for="Year" class="lhs">Year: </label>
+                <select name="Year" id="Year">
+                    <option>Select an Option</option>
+                </select>
+            </div>
+            <div class="inner">
+                <button id="button" type="submit">Submit</button>
+            </div>
+    </div>
+
+    <div id="Institutewise_table"></div>
+        <script>
+            const Instype = document.getElementById('InstituteType');
+            const Programme = document.getElementById('ProgrammeName');
+            const Course = document.getElementById('Course');
+            const Category = document.getElementById('Category');
+            const Gender = document.getElementById('Gender');
+            const Year = document.getElementById('Year');
+
+            document.getElementById('button').addEventListener('click', function()  {
+                
+                const instype = Instype.value;
+                const programme = Programme.value;
+                const course = Course.value;
+                const category = Category.value;
+                const gender = Gender.value;
+                const year = Year.value;
+                
+                update( instype,programme,course,category,gender,year);
+                });
+                
+            function update( instype,programme,course,category,gender,year){
+                const xhr = new XMLHttpRequest();
+                const url = `/get-InstituteWise-Table/?year=${year}&gender=${gender}&category=${category}&course=${course}&programme=${programme}&instype=${instype}`;
+                xhr.open('GET', url, true);
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                        const responseData = JSON.parse(xhr.responseText);
+                        renderdata(responseData);
+                    }
+                };
+                xhr.send();
+            }
+            function renderdata(data) {
+                var Institutewise_table = document.getElementById("Institutewise_table");
+                Institutewise_table.innerHTML = "";
+            
+                // Create table element
+                var table = document.createElement("table");
+                table.classList.add("result-table");
+
+                var serialNumber = 1;
+            
+                // Create table header
+                var thead = document.createElement("thead");
+                var headerRow = document.createElement("tr");
+                var headerCells = ["S.No", "Institute Name"];
+                headerCells.forEach(cellText => {
+                    var headerCell = document.createElement("th");
+                    headerCell.textContent = cellText;
+                    headerRow.appendChild(headerCell);
+                });
+                thead.appendChild(headerRow);
+                table.appendChild(thead);
+            
+                // Create table body
+                var tbody = document.createElement("tbody");
+                data.forEach(item => {
+                    var row = document.createElement("tr");
+
+                    // Add a cell for the serial number
+                    var serialCell = document.createElement("td");
+                    serialCell.textContent = serialNumber;
+                    row.appendChild(serialCell);
+
+                    var cells = [item.Institute];
+                    cells.forEach(cellText => {
+                        var cell = document.createElement("td");
+                        cell.textContent = cellText;
+                        row.appendChild(cell);
+                    });
+
+                    // Increment the serial number for the next row
+                    serialNumber++;
+
+                    tbody.appendChild(row);
+                });
+                table.appendChild(tbody);
+            
+                Institutewise_table.appendChild(table);
+            } 
+
+        </script>
+  
+  
+    <div>
+       <canvas id="myChart" width="300" height="100"></canvas>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js" integrity="sha512-M7nHCiNUOwFt6Us3r8alutZLm9qMt4s9951uo8jqO4UwJ1hziseL6O3ndFyigx6+LREfZqnhHxYjKRJ8ZQ69DQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
+  
+</body>
+
+{% include "footer.html" %}

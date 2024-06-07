@@ -46,6 +46,7 @@ header {
 }
 
 #config-header nav ul li a:hover {
+    background-color: #f04106;
     text-decoration: underline;
 }
 
