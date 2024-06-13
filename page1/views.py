@@ -354,7 +354,6 @@ def get_graph_RankWise(request):
     # category=request.GET.get('category')
     round=request.GET.get('round')
     data = josaaTable.objects.filter(
-        Round=round,
         Category = "OPEN",
         Gender=gender,
         Institute = institute,

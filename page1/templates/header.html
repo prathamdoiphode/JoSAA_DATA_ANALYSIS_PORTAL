@@ -6,10 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JOSAA</title>
     <link rel="stylesheet" href="{% static 'css/headfoot.css' %}">
-
+    <style>
+        .logo img {
+            width: 50px; /* Adjust the size as needed */
+            height: 50px; /* Adjust the size as needed */
+            border-radius: 50%;
+        }
+    </style>
     <header>
         <div id="config-header">
-            <div class="logo">Logo</div>
+            <div class="logo">
+                <img src="{% static 'images/rank.png' %}" alt="Logo"> 
+            </div>
+            <!-- <div class="logo">Logo</div> -->
             <nav>
                 <ul>
                     <li class="{% if request.path == '/' %} active {% endif %}"><a href="{% url 'home' %}">Home</a></li>

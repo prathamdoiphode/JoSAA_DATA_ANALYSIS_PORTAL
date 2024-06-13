@@ -2,5 +2,77 @@
 {% include "header.html" %}
 
 <h1>Hi, This is contact page</h1>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    <canvas id="myChart"></canvas>
+const ctx = document.getElementById('myChart').getContext('2d');
+const myLineChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ['January', 'February', 'March', 'April'],
+        datasets: [{
+            label: 'My First dataset',
+            data: [65, 59, 80, 81],
+            borderColor: 'rgba(75, 192, 192, 1)',
+            borderWidth: 1
+        }]
+    },
+    options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        display: true,
+                        title: {
+                            display: true,
+                            text: 'Round',
+                            font: {
+                                size: 18
+                            }
+                        },
+                        ticks: {
+                            font: {
+                                size: 14
+                            }
+                        }
+                    },
+                    y: {
+                        display: true,
+                        title: {
+                            display: true,
+                            text: 'Closing Rank',
+                            font: {
+                                size: 18
+                            }
+                        },
+                        ticks: {
+                            font: {
+                                size: 14
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: true,
+                        labels: {
+                            font: {
+                                size: 14
+                            }
+                        }
+                    }
+                },
+                layout: {
+                    padding: {
+                        top: 20,
+                        right: 20,
+                        bottom: 20,
+                        left: 20
+                    }
+                }
+            }
+});
+</script>
+
 
 {% include "footer.html" %}
