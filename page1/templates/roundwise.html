@@ -1,5 +1,6 @@
 {% load static %}
 {% include "header.html" %}
+
 <script>
 function showInstituteNameDropdown(InsTypedropdown) {
     const instype = InsTypedropdown.value;
@@ -189,45 +190,43 @@ function showGenderDropdown(CategoryDropdown) {
       };
       xhr.send();
 }
-function showRoundDropdown(GenderDropdown) {
-    var RoundDropdown = document.getElementById("Round");
-    var disp = document.getElementById("RoundDropdown");
+function showYearDropdown(GenderDropdown) {
+    var YearDropdown = document.getElementById("Year");
+    var disp = document.getElementById("YearDropdown");
     if (GenderDropdown.value !== "") {
         disp.style.display = "inline-block";
     } else {
         disp.style.display = "none";
     }
-    RoundDropdown.innerHTML = "";
+    YearDropdown.innerHTML = "";
     var option = document.createElement("option");
     option.value = "";
-    option.text = "Select Round";
+    option.text = "Select Year";
     option.style.fontSize = '25px';
-    Round.appendChild(option);
+    Year.appendChild(option);
     
       const xhr = new XMLHttpRequest();
-      const url = `/get-RoundDropdown/`;
+      const url = `/get-YearDropdown/`;
       xhr.open('GET', url, true);
       xhr.onreadystatechange = function() {
-          if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-              const responseData = JSON.parse(xhr.responseText);
-              
-              for (var i = 0; i < responseData.length; i++) {
+        if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+            const responseData = JSON.parse(xhr.responseText);
+            
+            for (var i = 0; i < responseData.length; i++) {
                 var option = document.createElement("option");
-                option.value = responseData[i]['Round'];
-                option.text = responseData[i]['Round'];
+                option.value = responseData[i]['Year'];
+                option.text = responseData[i]['Year'];
                 option.style.fontSize = '10px';
-                RoundDropdown.appendChild(option);
-              }
-              
-              
-          }
+                YearDropdown.appendChild(option);
+            }  
+        }
       };
       xhr.send();
 }
 </script>
 <body>
     <link rel="stylesheet" href="{% static 'css/innerpage.css' %}">
-    <div id="roundwise"><h4>Predict yearwise opening and closing rank</h4>
+    <div id="yearwise"><h4>Predict roundwise opening and closing rank</h4>
             <div class="inner">
                 <label for="InstituteType" class="lhs">Institute Type: </label>
                 <select name="InstituteType" id="InstituteType"  onchange="showInstituteNameDropdown(this)">
@@ -264,42 +263,41 @@ function showRoundDropdown(GenderDropdown) {
             </div>
             <div class="inner" id="GenderDropdown" style="display: none;">
                 <label for="Gender" class="lhs">Gender: </label>
-                <select name="Gender" id="Gender" onchange="showRoundDropdown(this)">
+                <select name="Gender" id="Gender" onchange="showYearDropdown(this)">
                     <option>Select an Option</option>
                 </select>
             </div>
-            <div class="inner" id="RoundDropdown" style="display: none;">
-                <label for="Round" class="lhs">Round: </label>
-                <select name="Round" id="Round">
+            <div class="inner" id="YearDropdown" style="display: none;">
+                <label for="Year" class="lhs">Year: </label>
+                <select name="Year" id="Year">
                     <option>Select an Option</option>
                 </select>
             </div>
     </div>
 
-    <div id="yearwise_table"></div>
+    <div id="roundwise_table"></div>
         <script>
             const Institute = document.getElementById('InstituteName');
             const Programme = document.getElementById('ProgrammeName');
             const Course = document.getElementById('Course');
             const Category = document.getElementById('Category');
             const Gender = document.getElementById('Gender');
-            const Round = document.getElementById('Round');
+            const Year = document.getElementById('Year');
 
-            Round.addEventListener('change', function() {
-                
+            Year.addEventListener('change', function() {
                 const institute = Institute.value;
                 const programme = Programme.value;
                 const course = Course.value;
                 const category = Category.value;
                 const gender = Gender.value;
-                const round = Round.value;
+                const year = Year.value;
                 
-                update( institute,programme,course,category,gender,round);
+                update( institute,programme,course,category,gender,year);
                 });
                 
-            function update( institute,programme,course,category,gender,round){
+            function update( institute,programme,course,category,gender,year){
                 const xhr = new XMLHttpRequest();
-                const url = `/get-Yearwise-Rank-Table/?round=${round}&gender=${gender}&category=${category}&course=${course}&programme=${programme}&institute=${institute}`;
+                const url = `/get-Roundwise-Rank-Table/?year=${year}&gender=${gender}&category=${category}&course=${course}&programme=${programme}&institute=${institute}`;
                 xhr.open('GET', url, true);
                 xhr.onreadystatechange = function() {
                     if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
@@ -310,8 +308,8 @@ function showRoundDropdown(GenderDropdown) {
                 xhr.send();
             }
             function renderdata(data) {
-                var yearwise_table = document.getElementById("yearwise_table");
-                yearwise_table.innerHTML = "";
+                var roundwise_table = document.getElementById("roundwise_table");
+                roundwise_table.innerHTML = "";
             
                 // Create table element
                 var table = document.createElement("table");
@@ -320,7 +318,7 @@ function showRoundDropdown(GenderDropdown) {
                 // Create table header
                 var thead = document.createElement("thead");
                 var headerRow = document.createElement("tr");
-                var headerCells = ["Year", "Opening Rank", "Closing Rank"];
+                var headerCells = ["Round", "Opening Rank", "Closing Rank"];
                 headerCells.forEach(cellText => {
                 var headerCell = document.createElement("th");
                 headerCell.textContent = cellText;
@@ -333,7 +331,7 @@ function showRoundDropdown(GenderDropdown) {
                 var tbody = document.createElement("tbody");
                 data.forEach(item => {
                 var row = document.createElement("tr");
-                var cells = [item.Year, item.Opening_Rank, item.Closing_Rank];
+                var cells = [item.Round, item.Opening_Rank, item.Closing_Rank];
                 cells.forEach(cellText => {
                     var cell = document.createElement("td");
                     cell.textContent = cellText;
@@ -343,10 +341,11 @@ function showRoundDropdown(GenderDropdown) {
                 });
                 table.appendChild(tbody);
             
-                yearwise_table.appendChild(table);
+                roundwise_table.appendChild(table);
             } 
 
         </script>
+  
   
     <div>
        <canvas id="myChart" width="300" height="100"></canvas>
