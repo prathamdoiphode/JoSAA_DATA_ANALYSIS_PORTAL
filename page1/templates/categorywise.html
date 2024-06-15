@@ -327,33 +327,14 @@ function showCategoryDropdown(YearDropdown) {
             
             function renderGraph(data) {
 
-                const labels = ["OPEN","OBC-NCL","SC","ST","EWS"]; // Array to store labels
-                const values_y16 = []; 
-                const values_y17 = [];
-                const values_y18 = [];
-                const values_y19 = [];
-                const values_y20 = [];
-                const values_y21 = [];
-                const values_y22 = [];
+                const labels = ["OPEN","EWS","OBC-NCL","SC","ST"]; // Array to store labels
+                const opening_rank_store = []; 
+                const closing_rank_store = [];
             
                 // Extract labels and values from the data
                 for (const item of data) {
-                    
-                    if(item.Year === 2016){
-                        values_y16.push(item.Closing_Rank);
-                    }else if(item.Year === 2017){
-                        values_y17.push(item.Closing_Rank);
-                    }else if(item.Year === 2018){
-                        values_y18.push(item.Closing_Rank);
-                    }else if(item.Year === 2019){
-                        values_y19.push(item.Closing_Rank);
-                    }else if(item.Year === 2020){
-                        values_y20.push(item.Closing_Rank);
-                    }else if(item.Year === 2021){
-                        values_y21.push(item.Closing_Rank);
-                    }else if(item.Year === 2022){
-                        values_y22.push(item.Closing_Rank);
-                    }
+                    opening_rank_store.push(item.Opening_Rank);
+                    closing_rank_store.push(item.Closing_Rank);   
                     
                 }
                 
@@ -368,21 +349,15 @@ function showCategoryDropdown(YearDropdown) {
                     data: {
                         labels: labels,
                         datasets: [{
-                            label: 'closing rank',
-                            data: [12, 19, 3, 5, 2],
-                            backgroundColor: [
-                                'rgba(255, 99, 132, 0.2)',
-                            ],
-                            borderColor: [
-                                'rgba(255, 99, 132, 1)',
-                            ],
-                            borderWidth: 1
-                        },{
                             label: 'opening rank',
-                            data: [10, 15, 8, 12, 7],
-                            backgroundColor: 'rgba(0, 0, 0, 0.2)',
+                            data: opening_rank_store,
+                            borderColor: 'rgba(255, 99, 132, 1)',
+                            fill: false
+                        },{
+                            label: 'closing rank',
+                            data: closing_rank_store,
                             borderColor: 'rgba(0, 0, 0, 1)',
-                            borderWidth: 1
+                            fill: false
                         }]
                     },
                     options: {
@@ -390,10 +365,12 @@ function showCategoryDropdown(YearDropdown) {
                         maintainAspectRatio: false,
                         scales: {
                             y: {
-                                stacked: true,
-                                beginAtZero: true,
+                                display: true,
+                                border: {
+                                color: 'black', // Set the border color
+                                width: 2 // Set the border width
+                            },
                                 ticks: {
-                                    stepSize: 1, // Step size between ticks
                                     font: {
                                         size: 14 // Font size of y-axis labels
                                     }
@@ -402,12 +379,17 @@ function showCategoryDropdown(YearDropdown) {
                                     display: true,
                                     text: 'Rank',
                                     font: {
-                                        size: 18 // Font size of y-axis title
+                                        size: 18, // Font size of y-axis title
+                                        weight: 'bold'
                                     }
                                 }
                             },
                             x: {
-                                stacked: true,
+                                display: true,
+                                border: {
+                                    color: 'black', // Set the border color
+                                    width: 2 // Set the border width
+                                },
                                 ticks: {
                                     font: {
                                         size: 14 // Font size of x-axis labels
@@ -417,7 +399,8 @@ function showCategoryDropdown(YearDropdown) {
                                     display: true,
                                     text: 'Round',
                                     font: {
-                                        size: 18 // Font size of x-axis title
+                                        size: 18, // Font size of x-axis title
+                                        weight: 'bold'
                                     }
                                 }
                             }
@@ -429,6 +412,20 @@ function showCategoryDropdown(YearDropdown) {
                                         size: 14 // Font size of legend labels
                                     },
                                     padding: 50
+                                }
+                            },
+                            title: {
+                                display: true,
+                                text: 'Category Wise Graph',
+                                font: {
+                                    color: 'darkblue',
+                                    size: 24, // Change this to adjust the title font size
+                                    weight: 'bold',
+                                    family: 'Arial'
+                                },
+                                padding: {
+                                    top: 20,
+                                    bottom: 20
                                 }
                             }
                         },

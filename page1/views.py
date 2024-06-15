@@ -351,39 +351,31 @@ def get_graph_CategoryWise(request):
     programname = request.GET.get('programme')
     category=request.GET.get('category')
     round=request.GET.get('round')
-    data = josaaTable.objects.filter(
-        Category = "OPEN",
-        Gender=gender,
-        Institute = institute,
-        Course = course,
-        Programme = programname
-    ).values()
-    
-    data = list(data)
-    return JsonResponse(data, safe=False)
+    if category == 'PwD':
+        data = josaaTable.objects.filter(
+            Gender=gender,
+            Institute = institute,
+            Course = course,
+            Year=year_value,
+            Round=round,
+            Programme = programname,
+            Category__icontains = category
+        ).values()
+    else:
+        data = josaaTable.objects.exclude(
+            Category__icontains='PwD'
+        ).filter(
+            Gender=gender,
+            Institute = institute,
+            Course = course,
+            Year=year_value,
+            Round=round,
+            Programme = programname,
+        ).values()
 
-    # if category == 'PwD':
-    #     data = josaaTable.objects.filter(
-    #         Institute = institute,
-    #         Programme=programme,
-    #         Course=course,
-    #         Gender=gender,
-    #         # Round=round,
-    #         #Year=year,
-    #         Category__icontains = category,
-    #     ).values()
-    # else:
-    #     data = josaaTable.objects.exclude(
-    #         Category__icontains='PwD'
-    #     ).filter(
-    #         Category="OPEN",
-    #         Institute = institute,
-    #         Programme=programme,
-    #         Course=course,
-    #         Gender=gender,
-    #         # Round=round,
-    #         #Year=year,
-    #     ).values()
+    data = list(data)
+    print(data)
+    return JsonResponse(data, safe=False)
 
 
 def get_graph_A_RankWise(request):
