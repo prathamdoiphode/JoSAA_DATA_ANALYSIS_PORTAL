@@ -1,8 +1,22 @@
 {% load static %}
 {% include "header.html" %}
 
-<h1>Hi, This is contributors page</h1>
-
-
+<body>
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+    <main>
+        <section>
+            <h2>Contribution and Acknowledgements</h2>
+            <p>This project utilises several open-source libraries and frameworks, including Django, Selenium, Pandas, NumPy, and Chart.js. We extend our heartfelt thanks to the developers of these tools for their invaluable contributions to the open-source community.</p>
+            <p>This project was made possible thanks to the support and allocation of this summer project by the Coding Club, IIT Guwahati.</p>
+            <p><strong>Contributors:</strong></p>
+            <ul>
+                <li><a href="https://www.linkedin.com/in/debabrata-samanta-321359288/" class="contributor">Debabrata Samanta</a>, MSc Mathematics’25</li>
+                <li><a href="https://www.linkedin.com/in/prathamdoiphode/" class="contributor">Pratham Doiphode</a>, MSc Mathematics and Computing’25</li>
+                <li><a href="https://www.linkedin.com/in/priyanshu-kumar-8525aa273/" class="contributor">Priyanshu Kumar</a>, MSc Mathematics’25</li>
+                <li><a href="https://www.linkedin.com/feed/" class="contributor">Sourish Maity</a>, MSc Mathematics and Computing’25</li>
+            </ul>
+        </section>
+    </main>
+</body>
 
 {% include "footer.html" %}
