@@ -55,15 +55,17 @@ header {
 }
 
 #config-header nav ul li a:hover {
-    background-color: #365486;
+    background-color: rgb(0 200 163 / 64%);
     text-decoration: none;
     color: #DCF2F1;
 }
 
 /* It is the background of active header  */
-/* #config-header  .active a{
-    background-color: rgb(255, 0, 0);
-} */
+#config-header  .active a{
+    background-color: #365486;
+    text-decoration: none;
+    color: #DCF2F1;
+}
 
 
 /* ###########  ........   css for footer    .......... ############## */

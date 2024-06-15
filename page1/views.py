@@ -11,14 +11,9 @@ def home(request):
 def about(request):
     return render(request,'about.html')
 
-def contact(request):
-    return render(request,'contact.html')
+def contributors(request):
+    return render(request,'contributors.html')
 
-def more(request):
-    return render(request,'more.html')
-
-def service(request):
-    return render(request,'service.html')
 
 # for questions function ....
 def roundwise(request):
@@ -30,14 +25,14 @@ def bestcourse(request):
 def yearwise(request):
     return render(request,'yearwise.html')
 
-def iitvsnit(request):
-    return render(request,'iitvsnit.html')
+def CourseComparison(request):
+    return render(request,'CourseComparison.html')
 
-def popularcollege(request):
-    return render(request,'popularcollege.html')
+def BestCollege(request):
+    return render(request,'BestCollege.html')
 
-def rank(request):
-    return render(request,'rank.html')
+def categorywise(request):
+    return render(request,'categorywise.html')
 
 
 # for dropdown data function ....
@@ -295,8 +290,9 @@ def get_Bestcourse_Table(request):
         Category=category,
         Gender=gender,
         Closing_Rank__gte=rank,
-        Year=2023
-    ).values()
+        Year=2023,
+        Round=6
+    ).order_by('Closing_Rank')[:20].values()
     data = list(data)
     return JsonResponse(data, safe=False)
 
@@ -314,8 +310,9 @@ def get_InstituteWise_Table(request):
             Course=course,
             Category=category,
             Gender=gender,
-            Year=year
-        ).order_by('Institute').values('Institute').distinct()
+            Year=year,
+            Round=1
+        ).order_by('Closing_Rank')[:20].values('Institute')
     elif instype in ['NIT', 'IIIT']:
         data = josaaTable.objects.filter(
             Institute__icontains = instype,
@@ -323,8 +320,9 @@ def get_InstituteWise_Table(request):
             Course=course,
             Category=category,
             Gender=gender,
-            Year=year
-        ).order_by('Institute').values('Institute').distinct()
+            Year=year,
+            Round=1
+        ).order_by('Closing_Rank')[:20].values('Institute')
     else:
         data = josaaTable.objects.exclude(
             Institute__icontains='IIT'
@@ -337,8 +335,9 @@ def get_InstituteWise_Table(request):
             Course=course,
             Category=category,
             Gender=gender,
-            Year=year
-        ).order_by('Institute').values('Institute').distinct()
+            Year=year,
+            Round=1
+        ).order_by('Closing_Rank')[:20].values('Institute')
     data = list(data)
     return JsonResponse(data, safe=False)
 
@@ -394,13 +393,15 @@ def get_graph_A_RankWise(request):
     iit_value = request.GET.get('institute_A')
     programtype_value = request.GET.get('course_A')
     programname_value = request.GET.get('programme_A')
+    category_value=request.GET.get('category_A')
     data_A = josaaTable.objects.filter(
         
-        Category = "OPEN",
+        Category = category_value,
         Gender=gen_value,
         Institute = iit_value,
         Course = programtype_value,
-        Programme = programname_value
+        Programme = programname_value,
+        Year=year_value
     ).values()
     data_A = list(data_A)
 

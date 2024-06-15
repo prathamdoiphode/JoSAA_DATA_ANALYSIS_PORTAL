@@ -5,17 +5,15 @@ urlpatterns = [
     # for headers url ....
     path('',views.home,name='home'),
     path('about/',views.about,name='about'),
-    path('contact/',views.contact,name='contact'),
-    path('more/',views.more,name='more'),
-    path('service/',views.service,name='service'),
+    path('contributors/',views.contributors,name='contributors'),
 
     # for questions url ....
     path('roundwise/',views.roundwise),
     path('bestcourse/',views.bestcourse),
     path('yearwise/',views.yearwise),
-    path('iitvsnit/',views.iitvsnit),
-    path('popularcollege/',views.popularcollege),
-    path('rank/',views.rank),
+    path('CourseComparison/',views.CourseComparison),
+    path('BestCollege/',views.BestCollege),
+    path('categorywise/',views.categorywise),
 
     
     

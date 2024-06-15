@@ -233,6 +233,7 @@
 #rankwise {
     padding-left: 170px;
     padding-right: 100px;
+    height: 150px !important;
 }
 
 /* for iit vs nit question */
