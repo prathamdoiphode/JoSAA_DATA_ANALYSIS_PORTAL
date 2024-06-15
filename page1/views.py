@@ -339,18 +339,17 @@ def get_InstituteWise_Table(request):
             Round=1
         ).order_by('Closing_Rank')[:20].values('Institute')
     data = list(data)
+    print(data)
     return JsonResponse(data, safe=False)
 
 # for graph show function ....
-def get_graph_RankWise(request):
+def get_graph_CategoryWise(request):
     gender = request.GET.get('gender')
     year_value = request.GET.get('year')
     institute = request.GET.get('institute')
     course = request.GET.get('course')
     programname = request.GET.get('programme')
-    # round=request.GET.get('round'),
-    # year=request.GET.get('year'),
-    # category=request.GET.get('category')
+    category=request.GET.get('category')
     round=request.GET.get('round')
     data = josaaTable.objects.filter(
         Category = "OPEN",
@@ -403,6 +402,7 @@ def get_graph_A_RankWise(request):
         Programme = programname_value,
         Year=year_value
     ).values()
+    print(data_A)
     data_A = list(data_A)
 
     return JsonResponse(data_A, safe=False)
@@ -413,19 +413,19 @@ def get_graph_B_RankWise(request):
     iit_value = request.GET.get('institute_B')
     programtype_value = request.GET.get('course_B')
     programname_value = request.GET.get('programme_B')
+    category_value=request.GET.get('category_B')
     data_B = josaaTable.objects.filter(
         
-        Category = "OPEN",
+        Category = category_value,
         Gender=gen_value,
         Institute = iit_value,
         Course = programtype_value,
-        Programme = programname_value
+        Programme = programname_value,
+        Year=year_value
     ).values()
     data_B = list(data_B)
-
+    print(data_B)
     return JsonResponse(data_B, safe=False)
-
-
 
 
 
@@ -450,49 +450,3 @@ def get_graph_yearwise(request):
     graph_data = list(graph_data)
 
     return JsonResponse(graph_data, safe=False)
-
-
-def get_yearwise_course(request):
-    year = request.GET.get('year')
-
-    data = josaaTable.objects.filter(
-            Year = year
-        ).values('Programme').distinct()
-    
-    data = list(data)
-    return JsonResponse(data, safe=False)
-
-def get_institutewise_gender(request):
-    name = request.GET.get('name')
-
-    data = josaaTable.objects.filter(
-            Programme = name
-        ).values('Gender').distinct()
-    
-    data = list(data)
-    return JsonResponse(data, safe=False)
-
-def get_institutewise_programtype(request):
-    inst = request.GET.get('inst')
-
-    data = josaaTable.objects.filter(
-            Institute = inst
-        ).values('Discipline').distinct()
-    
-    data = list(data)
-    return JsonResponse(data, safe=False)
-
-def get_programtype_programname(request):
-    types = request.GET.get('type')
-    iit = request.GET.get('iit')
-    data = josaaTable.objects.filter(
-            Institute = iit,
-            Discipline = types
-        ).values('Programme').distinct()
-    
-    data = list(data)
-    return JsonResponse(data, safe=False)
-
-
-
-

@@ -341,7 +341,6 @@ function showYearDropdown(GenderDropdown) {
                         <option>Select an Option</option>
                     </select>
                 </div>
-                <h3>College A Graph</h3>
             </div>
             <div class="side_section">
                 <h2>College B</h2>
@@ -373,7 +372,6 @@ function showYearDropdown(GenderDropdown) {
                         <option>Select an Option</option>
                     </select>
                 </div>
-                <h3>College B Graph</h3>
             </div>
         </div>
         <div id="middile_section">
@@ -475,27 +473,14 @@ function showYearDropdown(GenderDropdown) {
         function renderGraph_A(data) {
 
             const labels = [1,2,3,4,5,6]; // Array to store labels
-            const closing_rank_year = [];  //Array to store closing rank of year
             const opening_rank_year = [];  //Array to store opening rank of year
+            const closing_rank_year = [];  //Array to store closing rank of year
+            
         
             // Extract closing rank yearwise from the data of college_A And added to array
             for (const item of data) {
-                
-                if(item.Year === 2016){
-                    values_y16.push(item.Closing_Rank);
-                }else if(item.Year === 2017){
-                    values_y17.push(item.Closing_Rank);
-                }else if(item.Year === 2018){
-                    values_y18.push(item.Closing_Rank);
-                }else if(item.Year === 2019){
-                    values_y19.push(item.Closing_Rank);
-                }else if(item.Year === 2020){
-                    values_y20.push(item.Closing_Rank);
-                }else if(item.Year === 2021){
-                    values_y21.push(item.Closing_Rank);
-                }else if(item.Year === 2022){
-                    values_y22.push(item.Closing_Rank);
-                }
+                opening_rank_year.push(item.Opening_Rank);
+                closing_rank_year.push(item.Closing_Rank);
                 
             }
             
@@ -512,7 +497,7 @@ function showYearDropdown(GenderDropdown) {
                     labels: labels,
                     datasets: [{
                         label: 'Opening Rank',
-                        data: [12, 19, 3, 5, 2, 15],
+                        data: opening_rank_year,
                         backgroundColor: [
                             'rgba(255, 99, 132, 0.2)'
                         ],
@@ -522,7 +507,7 @@ function showYearDropdown(GenderDropdown) {
                         borderWidth: 1
                     },{
                         label: 'Closing Rank',
-                        data: [10, 15, 8, 12, 7, 13],
+                        data: closing_rank_year,
                         backgroundColor: 'rgba(54, 162, 235, 0.2)',
                         borderColor: 'rgba(54, 162, 235, 1)',
                         borderWidth: 1
@@ -534,11 +519,16 @@ function showYearDropdown(GenderDropdown) {
                     scales: {
                         x: {
                         display: true,
+                        border: {
+                                color: 'black', // Set the border color
+                                width: 2 // Set the border width
+                        },
                         title: {
                             display: true,
                             text: 'Round',
                             font:{
-                                size: 18
+                                size: 18,
+                                weight: 'bold'
                             }
                             },
                             ticks:{
@@ -549,14 +539,21 @@ function showYearDropdown(GenderDropdown) {
                         },
                         y: {
                             display: true,
+                            // beginAtZero: false,
+                            border: {
+                                color: 'darkblue', // Set the border color
+                                width: 2 // Set the border width
+                            },
                             title: {
                                 display: true,
                                 text: 'Rank',
                                 font:{
-                                    size: 18
+                                    size: 18,
+                                    weight: 'bold'
                                 }
                             },
                             ticks:{
+                                stepSize: 10,   // Step size between ticks
                                 font:{
                                     size: 14
                                 }
@@ -571,6 +568,20 @@ function showYearDropdown(GenderDropdown) {
                                     size: 14
                                 },
                                 padding: 30    // Increase space between legend labels
+                            }
+                        },
+                        title: {
+                            display: true,
+                            text: 'College A Graph',
+                            font: {
+                                color: 'darkblue',
+                                size: 24, // Change this to adjust the title font size
+                                weight: 'bold',
+                                family: 'Arial'
+                            },
+                            padding: {
+                                top: 20,
+                                bottom: 20
                             }
                         }
                     },
@@ -591,32 +602,13 @@ function showYearDropdown(GenderDropdown) {
         function renderGraph_B(data) {
 
             const labels = [1,2,3,4,5,6]; // Array to store labels
-            const values_y16 = []; //Array to store closing rank of year 2016
-            const values_y17 = []; //same all
-            const values_y18 = [];
-            const values_y19 = [];
-            const values_y20 = [];
-            const values_y21 = [];
-            const values_y22 = [];
+            const opening_rank_year = [];  //Array to store opening rank of year
+            const closing_rank_year = [];  //Array to store closing rank of year
         
             // Extract closing rank yearwise from the data of college_B And added to array
-            for (const item of data) {
-                
-                if(item.Year === 2016){
-                    values_y16.push(item.Closing_Rank);
-                }else if(item.Year === 2017){
-                    values_y17.push(item.Closing_Rank);
-                }else if(item.Year === 2018){
-                    values_y18.push(item.Closing_Rank);
-                }else if(item.Year === 2019){
-                    values_y19.push(item.Closing_Rank);
-                }else if(item.Year === 2020){
-                    values_y20.push(item.Closing_Rank);
-                }else if(item.Year === 2021){
-                    values_y21.push(item.Closing_Rank);
-                }else if(item.Year === 2022){
-                    values_y22.push(item.Closing_Rank);
-                }
+            for (const item of data) { 
+                opening_rank_year.push(item.Opening_Rank);
+                closing_rank_year.push(item.Closing_Rank);
                 
             }
             
@@ -625,35 +617,7 @@ function showYearDropdown(GenderDropdown) {
             // Destroy existing chart instances if they exist
             if (graphChart_B != null){
                 graphChart_B.destroy();
-            }
-            // Plugin to display numbers above bars
-            const barLabelsPlugin = {
-                id: 'barLabelsPlugin',
-                afterDatasetsDraw: function(chart, easing) {
-                    const ctx = chart.ctx;
-                    chart.data.datasets.forEach(function(dataset, i) {
-                        const meta = chart.getDatasetMeta(i);
-                        if (!meta.hidden) {
-                            meta.data.forEach(function(element, index) {
-                                // Draw the text
-                                ctx.fillStyle = 'rgb(0, 0, 0)'; // Black color
-                                const fontSize = 14;
-                                const fontStyle = 'normal';
-                                const fontFamily = 'Helvetica Neue';
-                                ctx.font = Chart.helpers.fontString(fontSize, fontStyle, fontFamily);
-                                // Just naively convert to string for now
-                                const dataString = dataset.data[index].toString();
-                                // Make sure alignment settings are correct
-                                ctx.textAlign = 'center';
-                                ctx.textBaseline = 'middle';
-                                const padding = 5;
-                                const position = element.tooltipPosition();
-                                ctx.fillText(dataString, position.x, position.y - fontSize / 2 - padding);
-                            });
-                        }
-                    });
-                }
-            };
+            } 
             
             graphChart_B = new Chart(ctx, {
                 type: 'bar',
@@ -661,7 +625,7 @@ function showYearDropdown(GenderDropdown) {
                     labels: labels,
                     datasets: [{
                         label: 'Opening Rank',
-                        data: [12, 19, 3, 5, 2, 15],
+                        data: opening_rank_year,
                         backgroundColor: [
                             'rgba(255, 99, 132, 0.2)',
                         ],
@@ -671,7 +635,7 @@ function showYearDropdown(GenderDropdown) {
                         borderWidth: 1
                     },{
                         label: 'Opening Rank',
-                        data: [10, 15, 8, 12, 7, 13],
+                        data: closing_rank_year,
                         backgroundColor: 'rgba(54, 162, 235, 0.2)',
                         borderColor: 'rgba(54, 162, 235, 1)',
                         borderWidth: 1
@@ -683,11 +647,16 @@ function showYearDropdown(GenderDropdown) {
                     scales: {
                         x: {
                             display: true,
+                            border: {
+                                color: 'black', // Set the border color
+                                width: 2 // Set the border width
+                            },
                             title: {
                                 display: true,
                                 text: 'Round',
                                 font:{
-                                    size: 18
+                                    size: 18,
+                                    weight: 'bold'
                                 }
                             },
                             ticks:{
@@ -698,18 +667,21 @@ function showYearDropdown(GenderDropdown) {
                         },
                         y: {
                             // beginAtZero: true,
-                            // min: 0,          // Minimum value on y-axis
-                            // max: 20,         // Maximum value on y-axis
                             display: true,
+                            border: {
+                                color: 'black', // Set the border color
+                                width: 2 // Set the border width
+                            },
                             title: {
                                 display: true,
                                 text: 'Rank',
                                 font:{
-                                    size: 18
+                                    size: 18,
+                                    weight: 'bold'
                                 }
                             },
                             ticks:{
-                                // stepSize: 1, // Step size between ticks
+                                stepSize: 10, // Step size between ticks
                                 font:{
                                     size: 14
                                 }
@@ -725,6 +697,20 @@ function showYearDropdown(GenderDropdown) {
                                 },
                                 padding: 30    // Increase space between legend labels
                             }
+                        },
+                        title: {
+                            display: true,
+                            text: 'College B Graph',
+                            font: {
+                                color: 'black',
+                                size: 24, // Change this to adjust the title font size
+                                weight: 'bold',
+                                family: 'Arial'
+                            },
+                            padding: {
+                                top: 20,
+                                bottom: 20
+                            }
                         }
                     },
                     layout: {
@@ -735,8 +721,7 @@ function showYearDropdown(GenderDropdown) {
                             left: 10
                         }
                     }
-                },
-                plugins: [barLabelsPlugin]
+                }
             });
             
         }

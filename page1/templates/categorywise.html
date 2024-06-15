@@ -227,13 +227,11 @@ function showCategoryDropdown(YearDropdown) {
     }
 }
 </script>
-<body style="background-color: lightgrey;">
+<body>
     <link rel="stylesheet" href="{% static 'css/innerpage.css' %}">
-    <p><h2>Here we analyze the Yearwise trend for every round</h2></p>
-    <div id="rankwise">
-        <div class="rectangle" id="InsTypeDropdown" >
-            <label for="InstituteType">Institute Type</label>
-            <br>
+    <div id="yearwise"><h4>Predict roundwise opening and closing rank</h4>
+        <div class="inner" id="InsTypeDropdown" >
+            <label for="InstituteType" class="lhs">Institute Type: </label>
             <select name="InstituteType" id="InstituteType" class="dropdown" onchange="showInstituteNameDropdown(this)">
                 <option value="">Select an institue type</option>
                 <option value="IIT">IIT</option>
@@ -242,64 +240,52 @@ function showCategoryDropdown(YearDropdown) {
                 <option value="Government">Government Institute</option>
             </select>
         </div>
-        <div class="rectangle" id="InstituteNameDropdown" style="display: none;">
-            <label for="InstituteName">Institute Name</label>
-            <br>
+        <div class="inner" id="InstituteNameDropdown" style="display: none;">
+            <label for="InstituteName" class="lhs">Institute Name: </label>
             <select id="InstituteName" name="InstituteName" class="dropdown" onchange="showProgramnameDropdown(this)">
                 <option>Select an Option</option>
             </select>
         </div>
-        <div class="rectangle" id="ProgrammeNameDropdown" style="display: none;">
-            <label for="ProgrammeName">Program Name</label>
-            <br>
+        <div class="inner" id="ProgrammeNameDropdown" style="display: none;">
+            <label for="ProgrammeName" class="lhs">Program Name: </label>
             <select id="ProgrammeName" name="ProgrammeName" class="dropdown" onchange="showCourseDropdown(this)">
                 <option>Select an Option</option>
             </select>
         </div>
-        <div class="rectangle" id="CourseDropdown" style="display: none;">
-            <label for="Course">Course</label>
-            <br>
+        <div class="inner" id="CourseDropdown" style="display: none;">
+            <label for="Course" class="lhs">Course: </label>
             <select id="Course" name="Course" class="dropdown" onchange="showGenderDropdown(this)" >
                 <option>Select an Option</option>
             </select>
         </div>
-        <div class="rectangle" id="GenderDropdown" style="display: none;">
-            <label for="Gender">Gender</label>
-            <br>
+        <div class="inner" id="GenderDropdown" style="display: none;">
+            <label for="Gender" class="lhs">Gender: </label>
             <select id="Gender" name="Gender" class="dropdown" onchange="showRoundDropdown(this)" >
                 <option>Select an Option</option>
             </select>
         </div>
-        <div class="rectangle" id="RoundDropdown" style="display: none;">
-            <label for="Round">Round</label>
-            <br>
+        <div class="inner" id="RoundDropdown" style="display: none;">
+            <label for="Round" class="lhs">Round: </label>
             <select id="Round" name="Round" class="dropdown" onchange="showYearDropdown(this)" >
                 <option>Select an Option</option>
             </select>
         </div>
-        <div class="rectangle" id="YearDropdown" style="display: none;">
-            <label for="Year">Year</label>
-            <br>
+        <div class="inner" id="YearDropdown" style="display: none;">
+            <label for="Year" class="lhs">Year: </label>
             <select id="Year" name="Year" class="dropdown" onchange="showCategoryDropdown(this)" >
                 <option>Select an Option</option>
             </select>
         </div>
-        <div class="rectangle" id="CategoryDropdown" style="display: none;">
-            <label for="Category">Category</label>
-            <br>
-            <select name="Category" id="Category" class="dropdown" >
+        <div class="inner" id="CategoryDropdown" style="display: none;">
+            <label for="Category" class="lhs">Category: </label>
+            <select name="Category" id="Category" class="dropdown">
                 <option value="">Select Category</option>
                 <option value="PwD">PwD</option>
                 <option value="NOT PwD">NOT PwD</option>
             </select>
         </div>
-        <div>
-            <canvas id="graphChart" width="300" height="550"></canvas>
-        </div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js" integrity="sha512-M7nHCiNUOwFt6Us3r8alutZLm9qMt4s9951uo8jqO4UwJ1hziseL6O3ndFyigx6+LREfZqnhHxYjKRJ8ZQ69DQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
-        
+    </div>
+
         <script>
             let graphChart = null;
             
@@ -328,7 +314,7 @@ function showCategoryDropdown(YearDropdown) {
             
             function updateGraph(institute,programme,course,gender,round,year,category) {
                 const xhr = new XMLHttpRequest();
-                const url = `/get-graph-RankWise/?institute=${institute}&programme=${programme}&course=${course}&gender=${gender}&round=${round}&year=${year}&category=${category}`;
+                const url = `/get-graph-CategoryWise/?institute=${institute}&programme=${programme}&course=${course}&gender=${gender}&round=${round}&year=${year}&category=${category}`;
                 xhr.open('GET', url, true);
                 xhr.onreadystatechange = function() {
                     if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
@@ -378,11 +364,11 @@ function showCategoryDropdown(YearDropdown) {
                 }
                 
                 graphChart = new Chart(ctx, {
-                    type: 'area',
+                    type: 'line',
                     data: {
                         labels: labels,
                         datasets: [{
-                            label: 'Sales',
+                            label: 'closing rank',
                             data: [12, 19, 3, 5, 2],
                             backgroundColor: [
                                 'rgba(255, 99, 132, 0.2)',
@@ -392,7 +378,7 @@ function showCategoryDropdown(YearDropdown) {
                             ],
                             borderWidth: 1
                         },{
-                            label: 'Revenue',
+                            label: 'opening rank',
                             data: [10, 15, 8, 12, 7],
                             backgroundColor: 'rgba(0, 0, 0, 0.2)',
                             borderColor: 'rgba(0, 0, 0, 1)',
@@ -406,8 +392,6 @@ function showCategoryDropdown(YearDropdown) {
                             y: {
                                 stacked: true,
                                 beginAtZero: true,
-                                min: 0,          // Minimum value on y-axis
-                                max: 20,         // Maximum value on y-axis
                                 ticks: {
                                     stepSize: 1, // Step size between ticks
                                     font: {
@@ -416,7 +400,7 @@ function showCategoryDropdown(YearDropdown) {
                                 },
                                 title: {
                                     display: true,
-                                    text: 'Closing Rank',
+                                    text: 'Rank',
                                     font: {
                                         size: 18 // Font size of y-axis title
                                     }
@@ -461,7 +445,14 @@ function showCategoryDropdown(YearDropdown) {
                 
             }
         </script>
+    <div>
+        <canvas id="graphChart" width="300" height="500"></canvas>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js" integrity="sha512-M7nHCiNUOwFt6Us3r8alutZLm9qMt4s9951uo8jqO4UwJ1hziseL6O3ndFyigx6+LREfZqnhHxYjKRJ8ZQ69DQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
+    
+
 </body>
 
 {% include "footer.html" %}

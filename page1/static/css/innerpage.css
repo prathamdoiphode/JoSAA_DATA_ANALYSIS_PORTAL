@@ -229,12 +229,27 @@
     border: 40px solid #733c77;
 }
 
-/* for rankwise question */
-#rankwise {
+/* for bestcollege question */
+#bestcollege {
     padding-left: 170px;
     padding-right: 100px;
-    height: 150px !important;
+    height: 350px;
+    justify-content: space-around;
 }
+#bestcollege .rectangle {
+    display: inline-block;
+    border: 1px solid #9ab761;
+    margin: 20px 0 0 0;
+    margin-bottom: 10px;
+    margin-right: 50px;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    font-size: 30px;
+    text-align: center;
+    width: 200px;
+}
+
 
 /* for iit vs nit question */
 
@@ -248,6 +263,9 @@
     font-size: 25px;
     margin-bottom: 10px;
     text-align: center;
+}
+#YearDropdown {
+    margin-bottom: 2px; /* Small space between Year dropdown and Programme dropdown */
 }
 
 #IIT_Vs_NIT select {
@@ -267,19 +285,11 @@
     justify-content: space-between; /* Distribute items evenly along the main-axis (horizontally) */
     height: 40vh;
 }
-#left_right_section h3 {
-    text-align: center;
-    line-height: 10; /* Adjust line height */
-    margin: 0; /* Remove default margin */
-    padding: 10px 0;
-    font-size: 25px;
-}
 #submitOption {
     background-color: #4CAF50;
     color: white;
     padding: 10px 20px;
     border: none;
-    margin-bottom: 0px;
     border-radius: 5px;
     cursor: pointer;
     margin-left: auto;

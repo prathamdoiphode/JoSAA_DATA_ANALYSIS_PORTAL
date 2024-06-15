@@ -193,9 +193,10 @@ function showYearDropdown(GenderDropdown) {
 </script>
 <body>
     <link rel="stylesheet" href="{% static 'css/innerpage.css' %}">
-    <div id="popularcollege"><h4>Predict yearwise opening and closing rank</h4>
-            <div class="inner">
-                <label for="InstituteType" class="lhs">Institute Type: </label>
+    <div id="bestcollege">
+            <div class="rectangle">
+                <label for="InstituteType">Institute Type</label>
+                <br>
                 <select name="InstituteType" id="InstituteType"  onchange="showProgramnameDropdown(this)">
                     <option id="main">Select an Option</option>
                     <option value="IIT">IIT</option>
@@ -204,38 +205,40 @@ function showYearDropdown(GenderDropdown) {
                     <option value="Government">Government Institute</option>
                 </select>
             </div>
-            <div class="inner" id="ProgrammeNameDropdown" style="display: none;">
-                <label for="ProgrammeName" class="lhs">Programme: </label>
+            <div class="rectangle" id="ProgrammeNameDropdown" style="display: none;">
+                <label for="ProgrammeName">Programme</label>
+                <br>
                 <select name="ProgrammeName" id="ProgrammeName" onchange="showCourseDropdown(this)">
                     <option>Select an Option</option>
                 </select>
             </div>
-            <div class="inner" id="CourseDropdown" style="display: none;">
-                <label for="Course" class="lhs">Course: </label>
+            <div class="rectangle" id="CourseDropdown" style="display: none;">
+                <label for="Course">Course</label>
+                <br>
                 <select name="Course" id="Course" onchange="showCategoryDropdown(this)">
                     <option>Select an Option</option>
                 </select>
             </div>
-            <div class="inner" id="CategoryDropdown" style="display: none;">
-                <label for="Category" class="lhs">Category: </label>
+            <div class="rectangle" id="CategoryDropdown" style="display: none;">
+                <label for="Category">Category</label>
+                <br>
                 <select name="Category" id="Category" onchange="showGenderDropdown(this)">
                     <option>Select an Option</option>
                 </select>
             </div>
-            <div class="inner" id="GenderDropdown" style="display: none;">
-                <label for="Gender" class="lhs">Gender: </label>
+            <div class="rectangle" id="GenderDropdown" style="display: none;">
+                <label for="Gender">Gender</label>
+                <br>
                 <select name="Gender" id="Gender" onchange="showYearDropdown(this)">
                     <option>Select an Option</option>
                 </select>
             </div>
-            <div class="inner" id="YearDropdown" style="display: none;">
-                <label for="Year" class="lhs">Year: </label>
+            <div class="rectangle" id="YearDropdown" style="display: none;">
+                <label for="Year">Year</label>
+                <br>
                 <select name="Year" id="Year">
                     <option>Select an Option</option>
                 </select>
-            </div>
-            <div class="inner">
-                <button id="button" type="submit">Submit</button>
             </div>
     </div>
 
@@ -248,7 +251,7 @@ function showYearDropdown(GenderDropdown) {
             const Gender = document.getElementById('Gender');
             const Year = document.getElementById('Year');
 
-            document.getElementById('button').addEventListener('click', function()  {
+            Year.addEventListener('change', function() {
                 
                 const instype = Instype.value;
                 const programme = Programme.value;
@@ -323,9 +326,8 @@ function showYearDropdown(GenderDropdown) {
 
         </script>
   
-  
     <div>
-       <canvas id="myChart" width="300" height="100"></canvas>
+       <canvas id="myChart" width="300" height="330"></canvas>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js" integrity="sha512-M7nHCiNUOwFt6Us3r8alutZLm9qMt4s9951uo8jqO4UwJ1hziseL6O3ndFyigx6+LREfZqnhHxYjKRJ8ZQ69DQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

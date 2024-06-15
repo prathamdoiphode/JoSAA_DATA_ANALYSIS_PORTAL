@@ -44,22 +44,9 @@ urlpatterns = [
     path('get-InstituteWise-Table/', views.get_InstituteWise_Table),
 
     # for graph url ....
-    path('get-graph-RankWise/', views.get_graph_RankWise),
+    path('get-graph-CategoryWise/', views.get_graph_CategoryWise),
     path('get-graph-A-RankWise/', views.get_graph_A_RankWise),
     path('get-graph-B-RankWise/', views.get_graph_B_RankWise),
-    
-    
-    
-    
-    # ..........
-    
-    path('get-yearwise-course/', views.get_yearwise_course),
-    path('get-institutewise-gender/', views.get_institutewise_gender),
-    path('get-institutewise-programtype/', views.get_institutewise_programtype),
-    path('get-programtype-programname/', views.get_programtype_programname),
-    path('get-graph-yearwise/', views.get_graph_yearwise),
-    
-         
     
     
 
