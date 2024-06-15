@@ -1,69 +1,98 @@
-{% load static %}
-{% include "header.html" %}   
+{% load static %} {% include "header.html" %}
 
 <body>
-    <div id="home-body">
-    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+  <div id="home-body">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" />
     <div class="image-container">
-        <img src="{% static 'img/josaa.jpg' %}" alt="Left Image" class="left-image">
-        <div class="container">
-            <h1>JoSAa  DaTA  AnaLySiS  PoRTaL </h1>
-        </div>
-        <img src="{% static 'img/club.jpg' %}" alt="Right Image" class="right-image">
+      <img
+        src="{% static 'img/josaa.jpg' %}"
+        alt="Left Image"
+        class="left-image"
+      />
+      <div class="container">
+        <h1>JoSAA Data Analysis Portal</h1>
+      </div>
+      <img
+        src="{% static 'img/club.jpg' %}"
+        alt="Right Image"
+        class="right-image"
+      />
     </div>
-    <div class="container">
-        <div class="topic">
-            <a href="roundwise">
-                <img src="{% static 'img/round.png' %}" alt="Topic 1 Image" class="circle-image">
-                <h2>Round Wise</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisc</p>
-                
-                
-            </a>
-        </div>
-        <div class="topic">
-            <a href="bestcourse">
-                <img src="{% static 'img/BestCo.png' %}" alt="Topic 2 Image" class="circle-image">
-                <h2>Best Course</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisc</p>
-                
-            </a>
-        </div>
-        <div class="topic">
-            <a href="yearwise">
-                <img src="{% static 'img/year1.png' %}" alt="Topic 3 Image" class="circle-image">
-                <h2>Year Wise</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisc</p>
-                
-            </a>
-        </div>
+    <div class="container1">
+      <div class="roundwise">
+        <a href="roundwise">
+          <img
+            src="{% static 'img/round.png' %}"
+            alt="Topic 1 Image"
+            class="circle-image"
+          />
+          <h2>Round-Wise</h2>
+          <p>Check the opening & closing ranks for all 6 rounds for a particular year.</p>
+        </a>
+      </div>
+      <div class="yearwise">
+        <a href="bestcourse">
+          <img
+            src="{% static 'img/year-wise.png' %}"
+            alt="Topic 2 Image"
+            class="circle-image"
+          />
+          <h2>Year-Wise</h2>
+          <p>Check the opening & closing ranks from 2016-2023 for a particular round.</p>
+        </a>
+      </div>
     </div>
-    <div class="container">
-        <div class="topic">
-            <a href="iitvsnit">
-                <img src="{% static 'img/iitNit.png' %}" alt="Topic 4 Image" class="circle-image">
-                <h2>IIT VS NIT</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisc</p>
-                
-            </a>
-        </div>
-        <div class="topic">
-            <a href="popularcollege">
-                <img src="{% static 'img/college.png' %}" alt="Topic 5 Image" class="circle-image">
-                <h2>Popular College</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisc</p>
-               
-            </a>
-        </div>
-        <div class="topic">
-            <a href="rank">
-                <img src="{% static 'img/rank.png' %}" alt="Topic 6 Image" class="circle-image">
-                <h2>Rank</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisc</p>
-                
-            </a>
-        </div>
+      
+    
+    <div class="container2">
+      <div class="categorywise">
+        <a href="yearwise">
+          <img
+            src="{% static 'img/category.jpg' %}"
+            alt="Topic 3 Image"
+            class="circle-image"
+          />
+          <h2>Category-Wise</h2>
+          <p>Check the category-wise difference between opening & closing ranks.</p>
+        </a>
+      </div>
+      <div class="top20">
+        <a href="iitvsnit">
+          <img
+            src="{% static 'img/top 20.png' %}"
+            alt="Topic 4 Image"
+            class="circle-image"
+          />
+          <h2>Top 20 Courses</h2>
+          <p>Check the top 20 courses for you based on your achieved rank.</p>
+        </a>
+      </div>
     </div>
+      <div class="container3">
+      <div class="course">
+        <a href="popularcollege">
+          <img
+            src="{% static 'img/compare.jpg' %}"
+            alt="Topic 5 Image"
+            class="circle-image"
+          />
+          <h2>Course Comparison</h2>
+          <p>Compare two courses from same / different colleges & check their fame.</p>
+        </a>
+      </div>
+      <div class="best">
+        <a href="rank">
+          <img
+            src="{% static 'img/college.jpg' %}"
+            alt="Topic 6 Image"
+            class="circle-image"
+          />
+          <h2>Best College</h2>
+          <p>Find the best colleges based on their popularity for a particular course.</p>
+        </a>
+      </div>
+    </div>
+    
   </div>
 </body>
 
