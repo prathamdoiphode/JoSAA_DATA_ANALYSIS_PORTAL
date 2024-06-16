@@ -64,7 +64,7 @@
   object-fit: cover;
 }
 
-#home-body .topic h2 {
+/* #home-body .topic h2 {
   margin-top: 10px;
   font-size: 1.2em;
   color: #333;
@@ -73,7 +73,7 @@
 
 #home-body .topic h2:hover {
   color: #007bff;
-}
+} */
 
 #home-body a {
   text-decoration: none;
@@ -196,6 +196,7 @@
   box-shadow: inset 0 -7rem 4rem rgb(0 200 163 / 64%), 0 0 0 3px #fffffff0,
   0.5em 0.5em 0.5em #ffc825d6;
 }
+
 #home-body h2:hover{
   color: #007bff; 
 }

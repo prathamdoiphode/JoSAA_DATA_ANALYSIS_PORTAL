@@ -137,6 +137,8 @@
 #best_course {
     padding-left: 170px;
     padding-right: 100px;
+    height: 200px;
+    justify-content: space-around;
 }
 
 .rectangle {

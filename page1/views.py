@@ -292,7 +292,7 @@ def get_Bestcourse_Table(request):
         Closing_Rank__gte=rank,
         Year=2023,
         Round=6
-    ).order_by('Closing_Rank')[:20].values()
+    ).order_by('Opening_Rank','Closing_Rank')[:20].values()
     data = list(data)
     return JsonResponse(data, safe=False)
 
