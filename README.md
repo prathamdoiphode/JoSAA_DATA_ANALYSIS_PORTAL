@@ -36,7 +36,7 @@ the key objectives and technologies used in this project.</p>
          <p>To run the JoSAA Seat Allotment Portal locally, follow these steps:</p>
          <ol>
             <li> Clone the repository:<br><br>
-git clone https://github.com/Devil6497/JOSAA_DATA_ANALYSIS_PORTAL.git</li><br>
+git clone https://github.com/debabrata64/JOSAA_DATA_ANALYSIS_PORTAL.git</li><br>
             <li> Change to the project directory:<br><br>
 cd josaa-portal</li><br>
             <li> Install the required Python packages:<br><br>
