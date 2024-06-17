@@ -25,7 +25,7 @@ the key objectives and technologies used in this project.</p>
         <ul>
             <li><strong>Frontend</strong>: HTML, CSS, JavaScript</li>
             <li><strong>Backend</strong>:  Django, SQLite</li>
-            <li><strong>Data Scrapping</strong>:Selenium</li>
+            <li><strong>Data Scraping</strong>:Selenium</li>
             <li><strong>Data Cleaning</strong>:NumPy, Pandas </li>
             <li><strong>Visualisation</strong>:Chart.js </li>
            </ul>
