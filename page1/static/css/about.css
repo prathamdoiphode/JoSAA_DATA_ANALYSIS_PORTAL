@@ -1,28 +1,158 @@
 body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f9f9f9;
-    color: #333;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  /* background-color: #f6f7f9; */
+  color: black;
 }
 
 main {
-    padding: 2rem 1rem;
-    max-width: 900px;
-    margin: 0 auto;
+  padding: 2.7rem 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+#cards{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+  /* height: 20rem; */
+}
+
+#details {
+    display: flex;
+    font-weight: bold;
+    /* justify-content: space-around; */
+    /* height: 20rem; */
+    
+  }
+
+  #linkedIn{
+    display: flex;
+  }
+  
+.name1{
+    margin-left: 2.5rem;
+}
+
+.name2{
+    margin-left: 5rem;
+}
+
+.name3{
+    margin-left: 5.5rem;
+}
+
+.name4{
+    margin-left: 6.7rem;
+}
+
+.l1{
+    margin-left: 6.5rem;
+}
+
+.l2{
+    margin-left: 13rem;
+}
+
+.l3{
+    margin-left: 13.5rem;
+}
+
+.l4{
+    margin-left: 13.5rem;
+}
+
+#linkedIn .l1 a i:hover{
+    transform: scale(1.5);
+}
+
+#linkedIn .l2 a i:hover{
+    transform: scale(1.5);
+}
+
+#linkedIn .l3 a i:hover{
+    transform: scale(1.5);
+}
+
+#linkedIn .l4 a i:hover{
+    transform: scale(1.5);
+}
+
+.card1 {
+  display: inline-block;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 50%;
+  /* margin-right: 1rem; */
+}
+
+.card1 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card2 {
+  display: inline-block;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 50%;
+  /* margin-right: 1rem; */
+}
+
+.card2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card3 {
+  display: inline-block;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 50%;
+  /* margin-right: 1rem; */
+}
+
+.card3 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card4 {
+  display: inline-block;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.card4 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 section {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 
 section h2 {
-    font-size: 1.8rem;
-    color: #004d99;
-    margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+  color: #004d99;
+  margin-bottom: 0.5rem;
 }
 
-ul {
+/* ul {
     list-style-type: disc;
     margin: 0;
     padding-left: 1.5rem;
@@ -40,28 +170,25 @@ ul li a.contributor {
 
 ul li a.contributor:hover {
     text-decoration: underline;
-}
+} */
 
-footer {
-    text-align: center;
-    padding: 1rem 0;
-    background-color: #f6f7f9;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.footer-section {
-    width: 70%;
-    padding: 0;
-}
-
-.footer-section.thank-you {
-    background-color: #004d99;
-}
-
-.footer-section:not(.thank-you) {
-    background-color: #004d99;
-    margin-top: 0.5rem;
+#message {
+  color: #0f1035;
+  font-weight: 700;
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 4rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  /* height: 5rem; */
+  width: 70%;
+  /* border: ridge gold; */
+  background: gold;
+  border: ridge gold;
+  border-radius: 13em / 3em;
+  margin-left: 13.5rem;
+  /* display: flex; */
+  margin-right: 13rem;
+  box-shadow: inset 0 -3em 3em rgb(0 200 0 / 30%), 0 0 0 2px white,
+    0.3em 0.3em 1em rgb(200 0 0 / 60%);
 }
