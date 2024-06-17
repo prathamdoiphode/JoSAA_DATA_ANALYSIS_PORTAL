@@ -14,7 +14,7 @@ the key objectives and technologies used in this project.</p>
    <section>
          <h2>Goals</h2>
          <ol>
-            <li> Perform data cleaning and exploratory data analysis (EDA) on the JoSAA seat allotment data</li>
+            <li> Perform data cleaning and exploratory data analysis (EDA) on the JoSAA seat allotment data.</li>
             <li> Create a SQLite database from the cleaned data and perform queries on it.</li>
             <li> Develop a website to present the analysis using various charts and tables.</li>
          </ol>
