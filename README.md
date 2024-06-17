@@ -33,7 +33,7 @@ the key objectives and technologies used in this project.</p>
    
    <section>
          <h2>Usage</h2>
-         <p>To run the JoSAA Seat Allotment Portal locally, follow these steps:</p>
+         <p>To run the JoSAA Data Analysis Portal locally, follow these steps:</p>
          <ol>
             <li> Clone the repository:<br><br>
 git clone https://github.com/debabrata64/JOSAA_DATA_ANALYSIS_PORTAL.git</li><br>
