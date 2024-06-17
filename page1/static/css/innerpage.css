@@ -1,339 +1,340 @@
-
 /* for roundwise question */
-#roundwise{
-    height: 350px;
-    width: 1200px;
-    background-color: rgb(12, 205, 231);
-    border-radius: 20px;
-    margin: 40px;
-    padding: 0px 5px 5px 5px;
-    border: 3px solid black;
-    justify-content: space-around;
-    align-items: center;
-    text-align: center;
+#roundwise {
+  height: 350px;
+  /* width: 1200px; */
+  background-color: #7fc7d9;
+  border-radius: 10px 40px;
+  margin: 40px;
+  padding: 0px 5px 5px 5px;
 
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+
+  border: thick double #0f1035;
 }
 
-#roundwise h4{
-    padding: 3px 0px 10px 0px;
-    border-bottom: 2px solid blue;
-    margin-top: 5px;
-    margin-bottom: 0;
-    color: #0e5799;
-    font-size: 34px;
+#roundwise h4 {
+  padding: 3px 0px 10px 0px;
+  border-bottom: 2px solid rgb(29, 150, 171);
+  margin-top: 5px;
+  margin-bottom: 0;
+  
+  font-size: 34px;
+
+
+  font-family: math;
+  
+  
+ 
+
+  color: #0f1035;
 }
 
-.inner{
-    text-align: center;
-    margin: 20px;
+.inner {
+  text-align: center;
+  margin: 20px;
 }
 
-.lhs{
-    font-family: Georgia, 'Times New Roman', Times, serif;
+.lhs {
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 #button {
-    color: #fff;
-    background-color: #3079e7;
-    border-color: #042b67;
-    text-align: center;
-
+  color: #fff;
+  background-color: #3079e7;
+  border-color: #042b67;
+  text-align: center;
 }
 #button:hover {
-    background-color: #151e92;
+  background-color: #151e92;
 }
-
 
 /* for yearwise question */
-#yearwise{
-    height: 350px;
-    width: 1200px;
-    background-color: rgb(171, 171, 116);
-    border-radius: 20px;
-    margin: 40px;
-    padding: 0px 5px 5px 5px;
-    border: 3px solid black;
-    justify-content: space-around;
-    align-items: center;
-    text-align: center;
+#yearwise {
+  height: 350px;
 
+  background-color: #7fc7d9;
+
+  border: thick double #0f1035;
+
+  border-radius: 10px 40px;
+  margin: 40px;
+  padding: 0px 5px 5px 5px;
+
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
 }
 
-#yearwise h4{
-    padding: 3px 0px 10px 0px;
-    border-bottom: 2px solid rgb(29, 150, 171);
-    margin-top: 5px;
-    margin-bottom: 0;
-    color: #b22823;
-    font-size: 34px;
+#yearwise h4 {
+  font-family: math;
+  padding: 3px 0px 10px 0px;
+  border-bottom: 2px solid rgb(29, 150, 171);
+  margin-top: 5px;
+  margin-bottom: 0;
+  color: #0f1035;
+  font-size: 34px;
 }
-
 
 /* for yeardwise table */
-#yearwise_table{
-    height: 100%;
-    margin: 0;
-    display: flex;
-    justify-content: center; /* Horizontally center */
-    align-items: center; /* Vertically center */
+#yearwise_table {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center; /* Horizontally center */
+  align-items: center; /* Vertically center */
 }
 #yearwise_table .result-table {
-    width: 85%;
-    border-collapse: collapse;
-    border: 40px solid #733c77;
+  width: 85%;
+  border-collapse: collapse;
+  border: 40px solid #733c77;
 }
 
 /* This is common part for all table */
 .result-table th,
 .result-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-    border-right: 2px solid #333;
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  border-right: 2px solid #333;
 }
-  
+
 .result-table th {
-    background-color: #618152;
-    font-weight: bold;
-    border-right: 2px solid #333;
-    font-size: 20px;
+  background-color: #618152;
+  font-weight: bold;
+  border-right: 2px solid #333;
+  font-size: 20px;
 }
 
 /* Add thicker border between rows */
 .result-table tr {
-    border-bottom: 2px solid #333;
+  border-bottom: 2px solid #333;
 }
 
 /* Remove right border for the last cell in each row */
 .result-table tr td:last-child {
-    border-right: none;
+  border-right: none;
 }
 
 .result-table th:last-child {
-    border-right: none;
+  border-right: none;
 }
-  
+
 .result-table tr:last-child td {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 /* for roundwise table */
 
-#roundwise_table{
-    height: 100%;
-    margin: 0;
-    display: flex;
-    justify-content: center; /* Horizontally center */
-    align-items: center; /* Vertically center */
+#roundwise_table {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center; /* Horizontally center */
+  align-items: center; /* Vertically center */
 }
 #roundwise_table .result-table {
-    width: 85%;
-    border-collapse: collapse;
-    border: 40px solid #b14b4b;
+  width: 85%;
+  border-collapse: collapse;
+  border: 40px solid #b14b4b;
 }
 
 /* for bestcourse question */
 #best_course {
-    padding-left: 170px;
-    padding-right: 100px;
-    height: 200px;
-    justify-content: space-around;
+  padding-left: 170px;
+  padding-right: 100px;
+  height: 200px;
+  justify-content: space-around;
 }
 
 .rectangle {
-    display: inline-block;
-    border: 1px solid #ff0000;
-    margin-bottom: 10px;
-    margin-right: 50px;
-    border-radius: 10px;
-    padding: 10px;
-    background-color: #f0f0f0;
-    font-size: 30px;
-    text-align: center;
-    width: 200px;
+  display: inline-block;
+  border: 1px solid #ff0000;
+  margin-bottom: 10px;
+  margin-right: 50px;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #f0f0f0;
+  font-size: 30px;
+  text-align: center;
+  width: 200px;
 }
 
 .dropdown {
-    height: 25px;
-    width: 190px;
-    font-size: 20px;
+  height: 25px;
+  width: 190px;
+  font-size: 20px;
 }
-#message{
-    position: fixed;
-    top: 40%;
-    left: 20%; 
-    transform: translate(-50%, -50%);
-    font-size: 35px;
-    color: red; 
+#message {
+  position: fixed;
+  top: 40%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  font-size: 35px;
+  color: red;
 }
-#submitButton{
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    margin-bottom: 0px;
-    border-radius: 5px;
+#submitButton {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  margin-bottom: 0px;
+  border-radius: 5px;
 }
 #submitButton:hover {
-    background-color: #0f9b16;
+  background-color: #0f9b16;
 }
 
-       
 /* for table of best couses */
-#institute_table{
-    height: 100%;
-    margin: 0;
-    display: flex;
-    justify-content: center; /* Horizontally center */
-    align-items: center; /* Vertically center */
+#institute_table {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center; /* Horizontally center */
+  align-items: center; /* Vertically center */
 }
 #institute_table .result-table {
-    width: 85%;
-    border-collapse: collapse;
-    border: 40px solid #733c77;
+  width: 85%;
+  border-collapse: collapse;
+  border: 40px solid #733c77;
 }
 
 /* for popular college */
-#popularcollege{
-    height: 350px;
-    width: 1200px;
-    background-color: rgb(118, 180, 71);
-    border-radius: 20px;
-    margin: 40px;
-    padding: 0px 5px 5px 5px;
-    border: 3px solid black;
-    justify-content: space-around;
-    align-items: center;
-    text-align: center;
-
+#popularcollege {
+  height: 350px;
+  width: 1200px;
+  background-color: rgb(118, 180, 71);
+  border-radius: 20px;
+  margin: 40px;
+  padding: 0px 5px 5px 5px;
+  border: 3px solid black;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
 }
 
-#popularcollege h4{
-    padding: 3px 0px 10px 0px;
-    border-bottom: 2px solid blue;
-    margin-top: 5px;
-    margin-bottom: 0;
-    color: #d60909;
-    font-size: 34px;
+#popularcollege h4 {
+  padding: 3px 0px 10px 0px;
+  border-bottom: 2px solid blue;
+  margin-top: 5px;
+  margin-bottom: 0;
+  color: #d60909;
+  font-size: 34px;
 }
 /* for table of best college  */
-#Institutewise_table{
-    height: 100%;
-    margin: 0;
-    display: flex;
-    justify-content: center; /* Horizontally center */
-    align-items: center; /* Vertically center */
+#Institutewise_table {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center; /* Horizontally center */
+  align-items: center; /* Vertically center */
 }
 #Institutewise_table .result-table {
-    width: 85%;
-    border-collapse: collapse;
-    border: 40px solid #733c77;
+  width: 85%;
+  border-collapse: collapse;
+  border: 40px solid #733c77;
 }
 
 /* for bestcollege question */
 #bestcollege {
-    padding-left: 170px;
-    padding-right: 100px;
-    height: 350px;
-    justify-content: space-around;
+  padding-left: 170px;
+  padding-right: 100px;
+  height: 350px;
+  justify-content: space-around;
 }
 #bestcollege .rectangle {
-    display: inline-block;
-    border: 1px solid #9ab761;
-    margin: 20px 0 0 0;
-    margin-bottom: 10px;
-    margin-right: 50px;
-    border-radius: 10px;
-    padding: 10px;
-    background-color: #f0f0f0;
-    font-size: 30px;
-    text-align: center;
-    width: 200px;
+  display: inline-block;
+  border: 1px solid #9ab761;
+  margin: 20px 0 0 0;
+  margin-bottom: 10px;
+  margin-right: 50px;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #f0f0f0;
+  font-size: 30px;
+  text-align: center;
+  width: 200px;
 }
-
 
 /* for iit vs nit question */
 
-#middile_section{
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    height: 35vh; /* Full viewport height */
-    margin: 0;
-    flex-direction: column;
-    font-size: 25px;
-    margin-bottom: 10px;
-    text-align: center;
+#middile_section {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 35vh; /* Full viewport height */
+  margin: 0;
+  flex-direction: column;
+  font-size: 25px;
+  margin-bottom: 10px;
+  text-align: center;
 }
 #YearDropdown {
-    margin-bottom: 2px; /* Small space between Year dropdown and Programme dropdown */
+  margin-bottom: 2px; /* Small space between Year dropdown and Programme dropdown */
 }
 
 #IIT_Vs_NIT select {
-    width: 250px;
-    padding: 8px;
-    margin-top: 5px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-sizing: border-box; 
+  width: 250px;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
 }
 #left_right_section {
-    padding: 0px 0;
-    max-width: 1250px;
-    margin: 0 auto;
-    display: flex; /* Make the container a flex container */
-    justify-content: space-between; /* Distribute items evenly along the main-axis (horizontally) */
-    height: 40vh;
+  padding: 0px 0;
+  max-width: 1250px;
+  margin: 0 auto;
+  display: flex; /* Make the container a flex container */
+  justify-content: space-between; /* Distribute items evenly along the main-axis (horizontally) */
+  height: 40vh;
 }
 #submitOption {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-left: auto;
-    margin-right: auto; 
-    display: block; 
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 #submitOption:hover {
-    background-color: #0f9b16;
+  background-color: #0f9b16;
 }
-
 
 #IIT_Vs_NIT .side_section {
-    margin-bottom: 20px;
-    width: 45%; /* Set width for each form section */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  margin-bottom: 20px;
+  width: 45%; /* Set width for each form section */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 #IIT_Vs_NIT h2 {
-
-    margin-bottom: 20px; /* Increase spacing below heading */
-    font-size: 30px;
+  margin-bottom: 20px; /* Increase spacing below heading */
+  font-size: 30px;
 }
 #IIT_Vs_NIT label {
-
-    display: block;
-    margin-bottom: 5px; /* Increase spacing below label */
+  display: block;
+  margin-bottom: 5px; /* Increase spacing below label */
 }
 /* for side side two graph */
 #chart-graph {
-    display: flex;
-    justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
 }
 #chart-graph .graph {
-    width: 45%; /* Adjust this percentage as needed */
-    /* max-width: 400px;  /* Optional: set a maximum width */
-    /* height: 500px; */
+  width: 45%; /* Adjust this percentage as needed */
+  /* max-width: 400px;  /* Optional: set a maximum width */
+  /* height: 500px; */
 }
-#chart_A, #chart_B {
+#chart_A,
+#chart_B {
   width: 100%; /* Adjust width as needed */
   height: 500px; /* Adjust this value to increase the height */
   /* height: auto; */
- }
-
-
+}
