@@ -24,10 +24,10 @@ the key objectives and technologies used in this project.</p>
         <h2>Tech Stack / Frameworks</h2>
         <ul>
             <li><strong>Frontend</strong>: HTML, CSS, JavaScript</li>
-            <li><strong>Backend</strong>:  Django, SQLite</li>
-            <li><strong>Data Scraping</strong>:Selenium</li>
-            <li><strong>Data Cleaning</strong>:NumPy, Pandas </li>
-            <li><strong>Visualisation</strong>:Chart.js </li>
+            <li><strong>Backend</strong>: Django, SQLite</li>
+            <li><strong>Data Scraping</strong>: Selenium</li>
+            <li><strong>Data Cleaning</strong>: NumPy, Pandas </li>
+            <li><strong>Visualisation</strong>: Chart.js </li>
            </ul>
 </section>
    
