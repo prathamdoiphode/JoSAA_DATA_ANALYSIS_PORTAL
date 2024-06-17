@@ -14,7 +14,7 @@ the key objectives and technologies used in this project.</p>
    <section>
          <h2>Goals</h2>
          <ol>
-            <li> Perform data cleaning and exploratory data analysis (EDA) on the JoSAA seat allotment data</li>
+            <li> Perform data cleaning and exploratory data analysis (EDA) on the JoSAA seat allotment data.</li>
             <li> Create a SQLite database from the cleaned data and perform queries on it.</li>
             <li> Develop a website to present the analysis using various charts and tables.</li>
          </ol>
@@ -24,16 +24,16 @@ the key objectives and technologies used in this project.</p>
         <h2>Tech Stack / Frameworks</h2>
         <ul>
             <li><strong>Frontend</strong>: HTML, CSS, JavaScript</li>
-            <li><strong>Backend</strong>:  Django, SQLite</li>
-            <li><strong>Data Scrapping</strong>:Selenium</li>
-            <li><strong>Data Cleaning</strong>:NumPy, Pandas </li>
-            <li><strong>Visualisation</strong>:Chart.js </li>
+            <li><strong>Backend</strong>: Django, SQLite</li>
+            <li><strong>Data Scraping</strong>: Selenium</li>
+            <li><strong>Data Cleaning</strong>: NumPy, Pandas </li>
+            <li><strong>Visualisation</strong>: Chart.js </li>
            </ul>
 </section>
    
    <section>
          <h2>Usage</h2>
-         <p>To run the JoSAA Seat Allotment Portal locally, follow these steps:</p>
+         <p>To run the JoSAA Data Analysis Portal locally, follow these steps:</p>
          <ol>
             <li> Clone the repository:<br><br>
 git clone https://github.com/debabrata64/JOSAA_DATA_ANALYSIS_PORTAL.git</li><br>
