@@ -31,11 +31,12 @@ the key objectives and technologies used in this project.</p>
            </ul>
 </section>
    
-   <section>
+
+ <!--  <section>
          <h2>Usage</h2>
          <p>To run the JoSAA Data Analysis Portal locally, follow these steps:</p>
          <ol>
-            <li> Clone the repository:<br><br>
+            <li> Clone the repository:<br><br> 
 git clone https://github.com/debabrata64/JOSAA_DATA_ANALYSIS_PORTAL.git</li><br>
             <li> Change to the project directory:<br><br>
 cd josaa-portal</li><br>
@@ -47,13 +48,13 @@ python manage.py migrate</li><br>
 python manage.py runserver</li><br>
             <li> Access the portal in your web browser at <a href="http://localhost:8000/">http://localhost:8000/</a>.</li><br>
         </ol>
-    </section>
+   </section> -->
    
- <section>
+<!-- <section>
          <h2>Data Extraction and Cleaning</h2>
         The JoSAA seat allotment data has been provided and is ready for analysis. The data cleaning 
 process involves using the NumPy and Pandas libraries to clean and transform the data as 
-required for analysis.
+required for analysis. -->
            
             
 </ul>
@@ -72,7 +73,7 @@ required for analysis.
         </ol>
 </section>
    
-   <section>
+  <!-- <section>
    <h2>Final Output</h2>
         When running this project on local servers, you can analyse the data based on various trends in 
 the sections mentioned above.
@@ -82,7 +83,7 @@ the sections mentioned above.
    <h2>Output Files</h2>
         In the <i>Outputs (images & video)</i> folder, you will find some graph images and a video showcasing 
 the working project.
-    </section>
+    </section> -->
    
    <section>
    <h2>Contributions</h2>
