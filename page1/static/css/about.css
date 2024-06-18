@@ -172,7 +172,15 @@ ul li a.contributor:hover {
     text-decoration: underline;
 } */
 
+h2 #contri{
+  text-align: center;
+  text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em blue;
+    color: white;
+  font: 1.82em Georgia, serif;
+}
+
 #message {
+  text-shadow: 1px 1px 2px pink;
   color: #0f1035;
   font-weight: 700;
   font-style: italic;

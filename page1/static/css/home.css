@@ -43,6 +43,7 @@
   border: 0.2 rem solid #007BFF;
   border-radius: 0.5rem;
   box-shadow: 1rem 1rem 2rem #0F1035; */
+  text-shadow: #FC0 1px 0 10px;
   display: flex;
   color: #0f1035;
   padding: 1rem;

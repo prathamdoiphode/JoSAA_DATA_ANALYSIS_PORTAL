@@ -307,7 +307,6 @@ def get_Bestcourse_Table(request):
             Year=2023,
             Round=6
         ).order_by('Opening_Rank','Closing_Rank')[:20].values()
-    print(data)
     data = list(data)
     return JsonResponse(data, safe=False)
 
@@ -354,7 +353,6 @@ def get_InstituteWise_Table(request):
             Round=1
         ).order_by('Closing_Rank')[:20].values('Institute')
     data = list(data)
-    print(data)
     return JsonResponse(data, safe=False)
 
 # for graph show function ....
@@ -389,7 +387,6 @@ def get_graph_CategoryWise(request):
         ).values()
 
     data = list(data)
-    print(data)
     return JsonResponse(data, safe=False)
 
 
@@ -409,7 +406,6 @@ def get_graph_A_RankWise(request):
         Programme = programname_value,
         Year=year_value
     ).values()
-    print(data_A)
     data_A = list(data_A)
 
     return JsonResponse(data_A, safe=False)
@@ -431,7 +427,6 @@ def get_graph_B_RankWise(request):
         Year=year_value
     ).values()
     data_B = list(data_B)
-    print(data_B)
     return JsonResponse(data_B, safe=False)
 
 
