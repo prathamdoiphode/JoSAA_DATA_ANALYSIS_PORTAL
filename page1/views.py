@@ -285,14 +285,29 @@ def get_Roundwise_Rank_Table(request):
 def get_Bestcourse_Table(request):
     category=request.GET.get('category')
     gender=request.GET.get('gender')
+    examtype=request.GET.get('examtype')
     rank=request.GET.get('rank')
-    data = josaaTable.objects.filter(
-        Category=category,
-        Gender=gender,
-        Closing_Rank__gte=rank,
-        Year=2023,
-        Round=6
-    ).order_by('Opening_Rank','Closing_Rank')[:20].values()
+
+    if examtype == 'JEE-Advance':
+        data = josaaTable.objects.filter(
+            Institute__startswith = 'IIT',
+            Category=category,
+            Gender=gender,
+            Closing_Rank__gte=rank,
+            Year=2023,
+            Round=6
+        ).order_by('Opening_Rank','Closing_Rank')[:20].values()
+    else:
+        data = josaaTable.objects.exclude(
+            Institute__startswith = 'IIT'
+        ).filter(
+            Category=category,
+            Gender=gender,
+            Closing_Rank__gte=rank,
+            Year=2023,
+            Round=6
+        ).order_by('Opening_Rank','Closing_Rank')[:20].values()
+    print(data)
     data = list(data)
     return JsonResponse(data, safe=False)
 

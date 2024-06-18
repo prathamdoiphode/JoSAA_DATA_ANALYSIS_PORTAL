@@ -38,6 +38,20 @@ function showGenderDropdown(CategoryDropdown) {
       };
       xhr.send();
 }
+function showRankDropdown(select) {
+    const rankDropdown = document.getElementById('RankDropdown');
+    const rankInput = document.getElementById('Rank');
+    
+    if (select.value === 'JEE-Main') {
+        rankDropdown.style.display = 'block';
+        rankInput.placeholder = 'Enter JEE Main rank';
+    } else if (select.value === 'JEE-Advance') {
+        rankDropdown.style.display = 'block';
+        rankInput.placeholder = 'Enter JEE Advance rank';
+    } else {
+        rankDropdown.style.display = 'none';
+    }
+}
 </script>
 
 <body style="background-color: rgb(239, 223, 177);">
@@ -64,8 +78,17 @@ function showGenderDropdown(CategoryDropdown) {
       <div class="rectangle" id="GenderDropdown">
           <label for="Gender">Gender</label>
           <br>
-          <select id="Gender" name="Gender" class="dropdown" >
-              <option value="">Select a program</option>
+          <select id="Gender" name="Gender" class="dropdown">
+              <option value="">Select an option</option>
+          </select>
+      </div>
+      <div class="rectangle" id="ExamTypeDropdown">
+          <label for="ExamType">Exam Type</label>
+          <br>
+          <select id="ExamType" name="ExamType" class="dropdown" onchange="showRankDropdown(this)">
+              <option value="">Select Exam Type</option>
+              <option value='JEE-Main'>JEE Main</option>
+              <option value='JEE-Advance'>JEE Advance</option>
           </select>
       </div>
       <div class="rectangle" id="RankDropdown" >
@@ -81,19 +104,21 @@ function showGenderDropdown(CategoryDropdown) {
       <script>
         const Category = document.getElementById('Category');
         const Gender = document.getElementById('Gender');
+        const ExamType = document.getElementById('ExamType');
         const Rank = document.getElementById('Rank');
         
         document.getElementById('submitButton').addEventListener('click', function() {
             const category = Category.value;
             const gender = Gender.value;
+            const examtype = ExamType.value;
             const rank = Rank.value;
             
-            update(category,gender,rank);
+            update(category,gender,examtype,rank);
           });
           
-        function update(category,gender,rank) {
+        function update(category,gender,examtype,rank) {
             const xhr = new XMLHttpRequest();
-            const url = `/get-Bestcourse-Table/?category=${category}&gender=${gender}&rank=${rank}`;
+            const url = `/get-Bestcourse-Table/?category=${category}&gender=${gender}&examtype=${examtype}&rank=${rank}`;
             xhr.open('GET', url, true);
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
