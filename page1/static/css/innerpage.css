@@ -19,14 +19,10 @@
   border-bottom: 2px solid rgb(29, 150, 171);
   margin-top: 5px;
   margin-bottom: 0;
-  
+
   font-size: 34px;
 
-
   font-family: math;
-  
-  
- 
 
   color: #0f1035;
 }
@@ -88,7 +84,7 @@
 #yearwise_table .result-table {
   width: 85%;
   border-collapse: collapse;
-  border: 40px solid #733c77;
+  border: groove 1rem #2818a3;
 }
 
 /* This is common part for all table */
@@ -102,7 +98,7 @@
 }
 
 .result-table th {
-  background-color: #618152;
+  background-color: #7FC7D9;
   font-weight: bold;
   border-right: 2px solid #333;
   font-size: 20px;
@@ -138,15 +134,17 @@
 #roundwise_table .result-table {
   width: 85%;
   border-collapse: collapse;
-  border: 40px solid #b14b4b;
+  border: groove 1rem #2818a3;
 }
 
 /* for bestcourse question */
 #best_course {
+  display: flex;
   padding-left: 170px;
   padding-right: 100px;
   height: 200px;
   justify-content: space-around;
+  margin-top: 4rem;
 }
 
 .rectangle {
@@ -176,21 +174,42 @@
   color: red;
 }
 #submitButton {
-  background-color: #4caf50;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  margin-bottom: 0px;
-  border-radius: 5px;
+  border: 0;
+  line-height: 2.5;
+  padding: 0 20px;
+  margin-top: 2rem;
+
+  font-size: 1rem;
+  text-align: center;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+  border-radius: 10px;
+  background-color: rgba(220, 0, 0, 1);
+  background-image: linear-gradient(
+    to top left,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.2) 30%,
+    rgba(0, 0, 0, 0)
+  );
+  box-shadow:
+    inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+    inset -2px -2px 3px rgba(0, 0, 0, 0.6);
 }
+
 #submitButton:hover {
-  background-color: #0f9b16;
+  background-color: rgba(255, 0, 0, 1);
+}
+
+#submitButton:active {
+  box-shadow:
+    inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+    inset 2px 2px 3px rgba(0, 0, 0, 0.6);
 }
 
 /* for table of best couses */
 #institute_table {
   height: 100%;
-  margin: 0;
+  margin: 5rem auto;
   display: flex;
   justify-content: center; /* Horizontally center */
   align-items: center; /* Vertically center */
@@ -198,7 +217,7 @@
 #institute_table .result-table {
   width: 85%;
   border-collapse: collapse;
-  border: 40px solid #733c77;
+  border: 40px solid #0F1035;
 }
 
 /* for popular college */
@@ -337,4 +356,18 @@
   width: 100%; /* Adjust width as needed */
   height: 500px; /* Adjust this value to increase the height */
   /* height: auto; */
+}
+
+#heading h1 {
+  /* line-height: 2rem; */
+  font-family: math;
+  text-align: center;
+  padding: 3px 0px 10px 0px;
+  border-bottom: 2px solid rgb(29, 150, 171);
+  margin-top: 1rem;
+  margin-bottom: 0;
+
+  font-size: 34px;
+
+  color: #0f1035;
 }
