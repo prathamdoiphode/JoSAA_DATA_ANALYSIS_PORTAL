@@ -46,7 +46,7 @@ function showRankDropdown(select) {
         rankInput.placeholder = 'Enter JEE Main rank';
     } else if (select.value === 'JEE-Advance') {
         rankDropdown.style.display = 'block';
-        rankInput.placeholder = 'Enter JEE Advance rank';
+        rankInput.placeholder = 'Enter JEE Advanced rank';
     } else {
         rankDropdown.style.display = 'none';
     }
@@ -96,7 +96,7 @@ function showRankDropdown(select) {
           <select id="ExamType" name="ExamType" class="dropdown" onchange="showRankDropdown(this)">
               <option value="">Select Exam Type</option>
               <option value='JEE-Main'>JEE Main</option>
-              <option value='JEE-Advance'>JEE Advance</option>
+              <option value='JEE-Advance'>JEE Advanced</option>
           </select>
       </div>
       <div class="rectangle" id="RankDropdown">
