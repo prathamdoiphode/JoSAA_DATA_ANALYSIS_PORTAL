@@ -8,7 +8,6 @@ web_scraping/josaa_table_data_(2016_2023).csv
 web_scraping/chromedriver
 # db.sqlite3
 
-
 # C extensions
 *.so
 
@@ -64,7 +63,7 @@ cover/
 # Django stuff:
 *.log
 local_settings.py
-db.sqlite3
+# db.sqlite3
 db.sqlite3-journal
 
 # Flask stuff:
