@@ -38,9 +38,9 @@ the key objectives and technologies used in this project.</p>
          <li><strong>Note:</strong> Due to the website we hosted our program on, there is a 1-2 second lag in 
 the drop down menus of each section. Please be patient as we work to fix this 
 issue.</li>
-    </p>To run the JOSAA Data Allotment Portal locally, follow these steps:</p>
-    <p>
-         <ol>
+    <li><strong>To run the JOSAA Data Allotment Portal locally, follow these steps:</strong></li>
+    
+<ol>
             <li> Clone the repository:<br><br> 
 git clone https://github.com/debabrata64/JOSAA_DATA_ANALYSIS_PORTAL.git</li><br>
             <li> Change to the project directory:<br><br>
@@ -53,7 +53,10 @@ python manage.py migrate</li><br>
 python manage.py runserver</li><br>
             <li> Access the portal in your web browser at <a href="http://localhost:8000/">http://localhost:8000/</a>.</li><br>
         </ol>
-   </section> -->
+ <li><strong>Please open on desktop mode of mobile
+or 
+open on laptop for nice visualization </strong></li>
+   </section> 
    
 <!-- <section>
          <h2>Data Extraction and Cleaning</h2>
