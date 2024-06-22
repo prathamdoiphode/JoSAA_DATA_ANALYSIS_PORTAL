@@ -32,19 +32,21 @@ the key objectives and technologies used in this project.</p>
 </section>
    
 
- <  <section>
+  <section>
          <h2>Usage</h2>
-         <p>To run the JoSAA Data Analysis Portal locally, click on this link:https://dsamanta64.pythonanywhere.com/</p>
+         <p>To run the JoSAA Data Analysis Portal directly, click on this link:https://dsamanta64.pythonanywhere.com/</p>
          <li><strong>Note:</strong> Due to the website we hosted our program on, there is a 1-2 second lag in 
 the drop down menus of each section. Please be patient as we work to fix this 
-issue.</li>
-    <li><strong>To run the JOSAA Data Allotment Portal locally, follow these steps:</strong></li>
+issue.Please open on desktop mode of mobile
+or 
+open on laptop for nice visualization.</li>
+    <li><strong>To run the JoSAA Data Allotment Portal locally, follow these steps:</strong></li>
     
 <ol>
             <li> Clone the repository:<br><br> 
 git clone https://github.com/debabrata64/JOSAA_DATA_ANALYSIS_PORTAL.git</li><br>
             <li> Change to the project directory:<br><br>
-cd josaa-portal</li><br>
+cd JOSAA_DATA_ANALYSIS_PORTAL</li><br>
             <li> Install the required Python packages:<br><br>
 pip install -r requirements.txt</li><br>
              <li> Run database migrations:<br><br>
@@ -53,9 +55,7 @@ python manage.py migrate</li><br>
 python manage.py runserver</li><br>
             <li> Access the portal in your web browser at <a href="http://localhost:8000/">http://localhost:8000/</a>.</li><br>
         </ol>
- <li><strong>Please open on desktop mode of mobile
-or 
-open on laptop for nice visualization </strong></li>
+
    </section> 
    
 <!-- <section>
