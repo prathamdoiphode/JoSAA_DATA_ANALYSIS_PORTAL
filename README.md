@@ -126,10 +126,7 @@ the Coding Club, IIT Guwahati.</p>
         </ul>
     </section>
     
-<section>
-         <h3>Link : https://dsamanta64.pythonanywhere.com/</h3>
-         
- </section>
+
 <section>
   
  Thank you for visiting the JoSAA Data Analysis Portal. We hope you find this resource insightful 
