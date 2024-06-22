@@ -44,7 +44,7 @@ Analysis Portal</a></strong></li>
 the drop down menus of each section. Please be patient as we work to fix this 
 issue.</p>
 </li>
- <li><strong>To run the JoSAA Data Allotment Portal locally, follow these steps:</strong></li>
+ <li><strong>To run the JoSAA Data Analysis Portal locally, follow these steps:</strong></li>
     
 <ol>
             <li> Clone the repository:<br><br> 
