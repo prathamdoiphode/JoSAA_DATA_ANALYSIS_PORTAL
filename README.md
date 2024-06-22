@@ -32,9 +32,14 @@ the key objectives and technologies used in this project.</p>
 </section>
    
 
- <!--  <section>
+ <  <section>
          <h2>Usage</h2>
-         <p>To run the JoSAA Data Analysis Portal locally, follow these steps:</p>
+         <p>To run the JoSAA Data Analysis Portal locally, click on this link:https://dsamanta64.pythonanywhere.com/</p>
+         <li><strong>Note:</strong> Due to the website we hosted our program on, there is a 1-2 second lag in 
+the drop down menus of each section. Please be patient as we work to fix this 
+issue.</li>
+    </p>To run the JOSAA Data Allotment Portal locally, follow these steps:</p>
+    <p>
          <ol>
             <li> Clone the repository:<br><br> 
 git clone https://github.com/debabrata64/JOSAA_DATA_ANALYSIS_PORTAL.git</li><br>
