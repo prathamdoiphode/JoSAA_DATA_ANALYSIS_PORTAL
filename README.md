@@ -58,7 +58,10 @@ python manage.py migrate</li><br>
             <li> Start the development server:<br><br>
 python manage.py runserver</li><br>
             <li> Access the portal in your web browser at <a href="http://localhost:8000/">http://localhost:8000/</a>.</li><br>
-        </ol>
+        </ol><br>
+
+<li><strong>See the demonstration of JoSAA Data Analysis Portal <a href="https://drive.google.com/file/d/1zQ11zSQZDUd7b2v3kjtSGrUtSKXuNXpq/view?usp=drive_link">here</a>.</strong></li><br>
+
 
    </section> 
    
