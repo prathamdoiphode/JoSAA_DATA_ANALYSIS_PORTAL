@@ -34,13 +34,15 @@ the key objectives and technologies used in this project.</p>
 
   <section>
          <h2>Usage</h2>
-         <p>To run the JoSAA Data Analysis Portal directly, click on this link:https://dsamanta64.pythonanywhere.com/</p>
-         <li><strong>Note:</strong> Due to the website we hosted our program on, there is a 1-2 second lag in 
+         <li><strong>To run the JoSAA Data Allotment Portal directly, click :<a href="https://dsamanta64.pythonanywhere.com/">JoSAA Data 
+Analysis Portal</a></strong></li>
+         <li><strong>Note:</strong>
+         <li>1.It is advised to open the website on PC/Laptop. Still, if you are using it on mobile, please turn on the desktop mode for desired visualization.</li> 
+         <li>2.Due to the website we hosted our program on, there is a 1-2 second lag in 
 the drop down menus of each section. Please be patient as we work to fix this 
-issue.Please open on desktop mode of mobile
-or 
-open on laptop for nice visualization.</li>
-    <li><strong>To run the JoSAA Data Allotment Portal locally, follow these steps:</strong></li>
+issue.</li>
+
+ <li><strong>To run the JoSAA Data Allotment Portal locally, follow these steps:</strong></li>
     
 <ol>
             <li> Clone the repository:<br><br> 
