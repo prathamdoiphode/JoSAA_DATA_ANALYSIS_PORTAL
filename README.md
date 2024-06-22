@@ -87,17 +87,6 @@ required for analysis. -->
         </ol>
 </section>
    
-  <!-- <section>
-   <h2>Final Output</h2>
-        When running this project on local servers, you can analyse the data based on various trends in 
-the sections mentioned above.
-    </section>
-
-<section>
-   <h2>Output Files</h2>
-        In the <i>Outputs (images & video)</i> folder, you will find some graph images and a video showcasing 
-the working project.
-    </section> -->
    
    <section>
    <h2>Contributions</h2>
