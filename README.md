@@ -47,7 +47,7 @@ issue.</li></ol><br>
     
 <ol>
             <li> Clone the repository:<br><br> 
-git clone https://github.com/debabrata64/JOSAA_DATA_ANALYSIS_PORTAL.git</li><br>
+git clone https://github.com/dsamanta64/JOSAA_DATA_ANALYSIS_PORTAL.git</li><br>
             <li> Change to the project directory:<br><br>
 cd JOSAA_DATA_ANALYSIS_PORTAL</li><br>
             <li> Install the required Python packages:<br><br>
