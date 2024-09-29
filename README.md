@@ -34,7 +34,7 @@ the key objectives and technologies used in this project.</p>
 
   <section>
          <h2>Usage</h2>
-         <li><strong>To run the JoSAA Data Analysis Portal directly, click <a href="https://dsamanta64.pythonanywhere.com/">here</a>.</strong></li>
+         <li><strong>To run the JoSAA Data Analysis Portal directly, click <a href="https://josaa-data-analysis-portal-1.onrender.com/">here</a>.</strong></li>
          <strong>Note</strong>:
          <ol>
          <li> It is advised to open the website on PC/Laptop. Still, if you are using it on mobile, please turn on the desktop mode for desired visualization.</li>
